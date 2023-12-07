@@ -1,0 +1,232 @@
+@charset 'utf-8';
+
+// ***********************************************
+// 　アイキャッチを中央寄せにする
+// ***********************************************
+.eye-catch-wrap{
+  text-align: center;
+}
+
+// 
+// ***********************************************
+// ***********************************************
+// ■ 投稿概要一覧リスト下部、ページネーション表示関連設定
+// ***********************************************
+// ***********************************************
+.nextPrevArea {
+  margin: 20px auto;
+  margin-bottom: 60px;
+
+  // 
+  // 「前の記事」「次の記事」ボタンを横並び表示したい
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }  
+
+  @include mquery( "mb" ) { width: 100% !important; }
+  
+  // border: 2px dashed red;
+
+  .post-link {
+    @include mquery( "pc" ) { position: relative; }
+    font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+    font-size: 18px;           // $articleTitleCharSize;
+    // width: auto;
+    width: 60%;
+    height: 100px;
+    margin: 0 auto;
+    @include mquery( "mb" ) {
+      width: 75%;
+      font-size: 16px;         // $articleTitleCharSizeMB;
+      margin-top: 40px;
+    }
+    // margin: 0 auto;
+    // margin-top: 40px;
+    padding: 25px 15px 10px 15px;
+    @include mquery( "mb" ) { padding: 10px 3px; }
+    border-top: none;
+    border-left: none;
+    border-radius: 8px;
+    box-shadow: 6px 6px 12px rgb(198, 198, 198);
+    background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+
+    // border: 2px solid blue;      // for DEBUG !!!!!
+    
+    // 
+    // ***********************************************
+    // ■ 投稿ページ内「前の記事へ」「次の記事へ」ボタン定義
+    // ★ prevNextBtn linkInternalDec 両方定義する事！
+    // ***********************************************
+    // .prevNextBtn { border: 2px dashed blueviolet; }         // for DEBUG!!!
+    .prevNextBtn a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      padding: 5px 10px;
+      // width: calc( 80% - 35px );
+      margin-left:   10%;
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.5em;
+      @include mquery('mb') { width: 90%; font-size: 14px; margin-left: 10px; }
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .prevNextBtn a:hover {
+      color: #f2f2f2;
+      .extLnkIcon { color: #f2f2f2; }
+    }
+
+    // 
+    // 投稿記事ページ内「前の記事・次の記事」ボタン表示用設定
+    // *************************
+    .linkInternalDec {
+      // border: 2px dashed lime;                // for DEBUG!!!!!
+      width: 40%;
+      margin-left: -15px;
+      @include mquery( "mb" ) {
+        margin: 10px 0 0 -10px;
+      }
+    }
+    .linkInternalDec:not( :nth-of-type(1) ) {
+      margin-left: 30px;
+      @include mquery( "mb" ) {
+        margin-left: 20px;
+      }
+    }
+
+    // 
+    // 背景色・ボタン本体
+    .linkInternalDec a {
+      background-color: rgb(111,150,223, 0.7);
+      border: 1px solid transparent;
+    }
+    // 
+    // 飾り１：黒線左上方ズレ枠線
+    .linkInternalDec a::before {
+      content: '';
+      position: absolute;
+      top:  -5px;
+      left: -5px;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: 1px solid #333;
+      // border-top   : 1px solid #333;
+      // border-bottom: 1px solid #333;
+    }
+    // 
+    // 飾り２：右側、横線
+    .linkInternalDec a::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -35px;
+      width: 70px;
+      @include mquery( "mb" ) {
+        right: -15px;
+        width: 30px;  
+      }
+      height: 1px;
+      transform: translateY(-50%);
+      background-color: #333;
+    }
+    .linkInternalDec a:hover {
+      background-color: rgb(111,150,223, 1);
+    }
+  }
+}
+
+// ***********************************************
+// 　各カテゴリー一覧リストページ・ページネーション用設定
+// ***********************************************
+.pagination {
+  width: auto;
+  margin: 0;
+  @include mquery( "mb" ) { margin-top: 20px; }
+  // border: 2px dashed lime;      // for DEBUG!
+}
+.pagination ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  // border: 2px solid purple;      // for DEBUG!
+  margin: 0;
+}
+.pagination li {
+  margin: 0 5px;
+}
+// ページネーション番号ボタン
+.page-numbers {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+	background-color: rgb(111,150,223, 0.7);
+  color: #333;
+}
+.page-numbers:hover {
+  color:white;
+  background-color: rgb(111,150,223, 1);
+  font-weight: 700;
+}
+// ページネーション番号「前へ」ボタン
+.page-numbers.prev:hover {
+  // background-color: #fcc;
+  content: "前";
+}
+// ページネーション番号「次へ」ボタン
+.page-numbers.next:hover {
+  // background-color: #fcc;
+  content: "次";
+}
+// ページネーション番号「現在位置」ボタン
+.page-numbers.current {
+  background-color: #fcc;
+}
+.page-numbers.current:hover {
+  cursor: not-allowed;
+  color: #333;
+  background-color: #fcc;
+}
+// 縮小「・・・」ボタン
+// .dots:hover {
+.dots {
+  cursor: not-allowed;
+  color: #333;
+  background-color: rgba( 220, 220, 220, 0.7 );
+}
+.dots:hover {
+  cursor: not-allowed;
+  color: #333;
+  background-color: rgba( 220, 220, 220, 1 );
+}
+// 下部、現在ページ位置・分数表示
+.pagination-total {
+  // 
+  // 親要素は「post-link」
+
+  @include mquery( "pc" ) {
+    position: absolute;
+    bottom: 13px;         // 5px;
+    left: 43%;  
+  }
+  @include mquery( "mb" ) { margin-top: 10px; }
+  text-align: center;
+  
+  // border: 1px solid #333;
+  // border-radius: 5px;
+  padding: 0;
+  width: 100px;
+  margin: 0 auto;
+  // margin-bottom: 10px;
+}
+

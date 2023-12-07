@@ -1,0 +1,1478 @@
+@charset "UTF-8";
+.areaChk {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk1 {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk2 {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk3 {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk4 {
+  position: absolute;
+  top: 400px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk5 {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk6 {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk7 {
+  position: absolute;
+  top: 700px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk8 {
+  position: absolute;
+  top: 800px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk9 {
+  position: absolute;
+  top: 900px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk10 {
+  position: absolute;
+  top: 1000px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: blueviolet;
+  border: 1px solid #333;
+}
+
+.areaChk11 {
+  position: absolute;
+  top: 1100px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk12 {
+  position: absolute;
+  top: 1200px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk13 {
+  position: absolute;
+  top: 1300px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk14 {
+  position: absolute;
+  top: 1400px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk15 {
+  position: absolute;
+  top: 1500px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk16 {
+  position: absolute;
+  top: 1600px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk17 {
+  position: absolute;
+  top: 1700px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk18 {
+  position: absolute;
+  top: 1800px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk19 {
+  position: absolute;
+  top: 1900px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk20 {
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: blueviolet;
+  border: 1px solid #333;
+}
+
+.areaChk21 {
+  position: absolute;
+  top: 2100px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk22 {
+  position: absolute;
+  top: 2200px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk23 {
+  position: absolute;
+  top: 2300px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk24 {
+  position: absolute;
+  top: 2400px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk25 {
+  position: absolute;
+  top: 2500px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk26 {
+  position: absolute;
+  top: 2600px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk27 {
+  position: absolute;
+  top: 2700px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk28 {
+  position: absolute;
+  top: 2800px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk29 {
+  position: absolute;
+  top: 2900px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: lime;
+  border: 1px solid #333;
+}
+
+.areaChk30 {
+  position: absolute;
+  top: 3000px;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background-color: blueviolet;
+  border: 1px solid #333;
+}
+
+.extLnkIcon {
+  color: blue;
+  margin: 0 0 4px 10px;
+}
+
+@media screen and (min-width: 680px) {
+  /* 横スクロール全画面、イベント認識領域 */
+  .sideScrollArea {
+    overflow: hidden;
+    /* 横スクロール全画面、ラッパー */
+  }
+  .sideScrollArea .allPanelWrapper {
+    display: flex;
+    /* 実横スクロール、各１画面 */
+  }
+  .sideScrollArea .allPanelWrapper .panel {
+    height: 100vh;
+    /* １画面内レイアウト設定 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 12px gray;
+    border-radius: 3px;
+  }
+}
+/*
+ * スクロールダウンガイド表示機能 
+ // ***********************************************
+ // ***********************************************
+ */
+.scrollGuideArea {
+  display: flex;
+  writing-mode: vertical-rl; /* 英語記述方向、上～下 */
+  position: fixed;
+  top: 55vh;
+  opacity: 0;
+  transform: translate(0, 0);
+  z-index: 999;
+  /* 60px */
+}
+@media screen and (max-width: 679px) {
+  .scrollGuideArea {
+    left: 10px;
+  }
+}
+@media screen and (min-width: 680px) {
+  .scrollGuideArea {
+    left: 30px;
+  }
+}
+
+/* 「scroll」文字列 */
+.scrollGuideArea p {
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  z-index: 999;
+  font-family: "Crimson Text", "Yu Mincho Medium", 游明朝体, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+.downArrow {
+  position: relative;
+  left: -7px; /* 50% */
+  top: 20px;
+}
+
+/* 線の描写 */
+.downArrow::after {
+  content: "";
+  /* 描画位置 */
+  position: absolute;
+  top: 10px;
+  /* 線の形状 */
+  width: 1px;
+  height: 0px;
+  background: gray;
+  /*【２】アニメーション：「keyframes」線の動き 2秒 永久ループ */
+  animation: pathmove 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+/*【２】アニメーション：高さ・位置・透過が変化して線が上から下に動く */
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  /* 全移動距離中「30％」で完全表示 */
+  30% {
+    height: 70px; /* 移動アロー、完全表示時の全体長 */
+    opacity: 0.8;
+  }
+  100% {
+    height: 0;
+    top: 100px;
+    opacity: 0;
+  }
+}
+/* 
+ * 「ヘッダー」ナビゲーションメニューに於ける、フォーカスONの下線表示
+ // ***********************************************
+ // ***********************************************
+ */
+header #navigation a {
+  display: inline-block;
+  line-height: 1.5em;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+header #navigation a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  transform: translate(-100%, 0);
+  transition: transform 500ms;
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+  content: "";
+}
+header #navigation a:hover:after {
+  transform: translate(0, 0);
+}
+
+/* 
+ * 「フッター」ナビゲーションメニューに於ける、フォーカスONの下線表示
+ // ***********************************************
+ // ***********************************************
+ */
+footer #footerNav a {
+  display: inline-block;
+  line-height: 1.5em;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+footer #footerNav a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  transform: translate(-100%, 0);
+  transition: transform 500ms;
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+  content: "";
+}
+footer #footerNav a:hover:after {
+  transform: translate(0, 0);
+}
+
+/*
+ *　共通部品としての「ボタン」を定義。
+ // ***********************************************
+ // ***********************************************
+ */
+.btn {
+  display: inline-block;
+  text-align: center;
+  font-family: "Crimson Text", "Yu Mincho Medium", 游明朝体, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  color: #333;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 7px 7px rgba(3, 3, 3, 0.3);
+  letter-spacing: 1px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transform: scale(0.8);
+  transition-duration: 0.5s;
+}
+@media screen and (max-width: 679px) {
+  .btn {
+    font-size: 3vw;
+    font-size: 14px;
+    padding: 4vw 6vw;
+    padding: 15px 20px;
+    line-height: 2vw;
+    line-height: 1.5em;
+  }
+}
+@media screen and (min-width: 680px) {
+  .btn {
+    font-size: 0.8vw;
+    font-size: clamp(0.95vw, 0.95vw, 16px);
+    padding: 1vw 1.5vw;
+    padding: 15px 20px;
+    line-height: 1.5vw;
+    line-height: 1.5em;
+  }
+}
+
+.btn:hover {
+  color: white;
+  background-color: rgba(102, 90, 26, 0.5);
+  opacity: 1;
+}
+
+.btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 7px;
+  left: 7px;
+}
+
+/*塗りから線に変わる*/
+.btnchangeline {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  padding: 10px 30px;
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  /*アニメーションの指定*/
+  transition: all 0.3s ease-in-out;
+}
+
+/*線の設定*/
+.btnchangeline::before {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  /*線の形状*/
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  /*はじめは透過0に*/
+  opacity: 0;
+  transform: scale(0, 1);
+  /*アニメーションの指定*/
+  transition: all 0.3s;
+}
+
+/*背景の設定*/
+.btnchangeline::after {
+  content: "";
+  /*絶対配置で背景の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  /*背景の形状*/
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  /*アニメーションの指定*/
+  transition: all 0.3s;
+}
+
+/*hoverした際の背景と線の形状*/
+.btnchangeline:hover::before {
+  opacity: 1; /*不透明に*/
+  transform: scale(1, 1); /*X方向に線を伸ばす*/
+}
+
+.btnchangeline:hover::after {
+  opacity: 0; /*透過0に*/
+  transform: scale(0, 1); /*X方向に背景を縮小*/
+}
+
+/*テキストの設定*/
+.btnchangeline span {
+  /*テキストを前面に出すためz-indexの値を高く設定*/
+  position: relative;
+  z-index: 2;
+  /*テキストの形状*/
+  /*アニメーションの指定*/
+  transition: all 0.3s;
+}
+
+/*hoverした際のテキストの形状*/
+.btnchangeline:hover span {
+  letter-spacing: 2px;
+}
+
+.doubleLine {
+  width: 95%;
+  display: inline-block;
+  padding: 3px;
+  border-bottom: double 5px rgb(180, 194, 220);
+  margin-bottom: 5px;
+}
+
+.siteHeader {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-100%);
+  background-color: #f6f6f6;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2;
+}
+.siteHeader .waPlusLogo, .siteHeader .waPlusLogoNL {
+  transition: transform 500ms;
+}
+@media screen and (max-width: 679px) {
+  .siteHeader .waPlusLogo, .siteHeader .waPlusLogoNL {
+    margin: 15px 30px;
+    width: 50vw;
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 680px) {
+  .siteHeader .waPlusLogo, .siteHeader .waPlusLogoNL {
+    margin: 15px 5vw;
+    width: 17vw;
+    margin-left: 10vw;
+  }
+}
+.siteHeader .waPlusLogo:hover {
+  transform: scale(1.05);
+}
+.siteHeader nav {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.siteHeader nav .mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10vw;
+}
+.siteHeader nav .mainNav .navInter {
+  display: block;
+  content: "---";
+  width: 30px;
+  height: 100%;
+}
+.siteHeader nav .mainNav .navInter:nth-of-type(1) {
+  width: 100px;
+}
+@media screen and (max-width: 679px) {
+  .siteHeader nav .mainNav {
+    display: none;
+  }
+}
+.siteHeader #subMnuErase {
+  position: fixed;
+  top: 0;
+  height: 48px;
+}
+@media screen and (max-width: 679px) {
+  .siteHeader .hamburgerMenu-Wrapper {
+    display: block;
+  }
+}
+@media screen and (min-width: 680px) {
+  .siteHeader .hamburgerMenu-Wrapper {
+    display: none;
+  }
+}
+.siteHeader .philoSubMenu {
+  opacity: 0;
+  position: absolute;
+  top: 80px;
+  padding: 10px 20px;
+  box-shadow: 6px 6px 12px rgb(198, 198, 198);
+  border-radius: 3px;
+  z-index: 0;
+  background-color: rgb(246, 246, 246);
+  transition-duration: 0.8s;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 2em;
+}
+.siteHeader .philoSubMenu ul {
+  flex-direction: column;
+  text-align: left;
+}
+.siteHeader .bizSubMenu {
+  opacity: 0;
+  position: absolute;
+  top: 80px;
+  padding: 10px 20px;
+  box-shadow: 6px 6px 12px rgb(198, 198, 198);
+  border-radius: 3px;
+  z-index: 0;
+  background-color: rgb(246, 246, 246);
+  transition-duration: 0.8s;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 2em;
+}
+.siteHeader .bizSubMenu ul {
+  flex-direction: column;
+  text-align: left;
+}
+.siteHeader .activitySubMenu {
+  opacity: 0;
+  position: absolute;
+  top: 80px;
+  padding: 10px 20px;
+  box-shadow: 6px 6px 12px rgb(198, 198, 198);
+  border-radius: 3px;
+  z-index: 0;
+  background-color: rgb(246, 246, 246);
+  transition-duration: 0.8s;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 2em;
+}
+.siteHeader .activitySubMenu ul {
+  flex-direction: column;
+  text-align: left;
+}
+.siteHeader .aboutUSSubMenu {
+  opacity: 0;
+  position: absolute;
+  top: 80px;
+  padding: 10px 20px;
+  box-shadow: 6px 6px 12px rgb(198, 198, 198);
+  border-radius: 3px;
+  z-index: 0;
+  background-color: rgb(246, 246, 246);
+  transition-duration: 0.8s;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 2em;
+}
+.siteHeader .aboutUSSubMenu ul {
+  flex-direction: column;
+  text-align: left;
+}
+.siteHeader .newsSubMenu {
+  opacity: 0;
+  position: absolute;
+  top: 80px;
+  padding: 10px 20px;
+  box-shadow: 6px 6px 12px rgb(198, 198, 198);
+  border-radius: 3px;
+  z-index: 0;
+  background-color: rgb(246, 246, 246);
+  transition-duration: 0.8s;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 2em;
+}
+.siteHeader .newsSubMenu ul {
+  flex-direction: column;
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  font-size: 1.8vh;
+}
+footer .siteFooter {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter {
+    flex-direction: row;
+  }
+}
+footer .siteFooter .cmpyInfo {
+  flex-direction: column;
+  text-align: center;
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .cmpyInfo {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter .cmpyInfo {
+    margin: 80px 0 0 0;
+    padding: 0 0;
+  }
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .cmpyInfo .footerLogo img, footer .siteFooter .cmpyInfo .footerLogoNL img {
+    margin: 0 30px;
+    width: 10vh;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter .cmpyInfo .footerLogo img, footer .siteFooter .cmpyInfo .footerLogoNL img {
+    margin: 20px 5vw;
+    width: 6vw;
+  }
+}
+footer .siteFooter .cmpyInfo .footerLogo:hover {
+  transition: transform 0.5s;
+  transform: scale(1.05);
+}
+footer .siteFooter .cmpyInfo h2 {
+  font-size: 1.5em !important;
+  font-weight: bold;
+  line-height: 1em;
+  color: #647C92;
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .cmpyInfo h2 {
+    font-size: 1.2em !important;
+    margin: 20px auto;
+    margin-bottom: 30px;
+  }
+}
+footer .siteFooter .cmpyInfo .waPlusAddr {
+  padding: 20px 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1.5vh;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .cmpyInfo .waPlusAddr {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter .cmpyInfo .waPlusAddr {
+    width: 60%;
+    margin: 20px auto;
+  }
+}
+footer .siteFooter #footerNav {
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: normal;
+  line-height: 2em;
+  margin-bottom: 0;
+  padding: 40px 20px;
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter #footerNav {
+    width: 65%;
+    margin: 0px auto;
+    line-height: 2em;
+    padding: 30px 0 20px 0;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter #footerNav {
+    margin: 80px 10px 20px 20px;
+  }
+}
+footer .siteFooter .brandLink {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .brandLink {
+    height: 15vw;
+    margin-top: 20px !important;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter .brandLink {
+    height: 5vw;
+    margin-top: 120px !important;
+    margin-bottom: 40px;
+  }
+}
+footer .siteFooter .brandLink .inekkaLink, footer .siteFooter .brandLink .inekkaLinkNL {
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  background-image: url("./../../../../Images/i-nekka/i-nekka_Edwardian_1024.jpg");
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .brandLink .inekkaLink, footer .siteFooter .brandLink .inekkaLinkNL {
+    margin: 0 auto;
+    width: 15vw;
+    height: 15vw;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter .brandLink .inekkaLink, footer .siteFooter .brandLink .inekkaLinkNL {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+footer .siteFooter .brandLink .inekkaLink:hover {
+  transition: transform 0.5s;
+  transform: scale(1.05);
+}
+footer .siteFooter .brandLink .ACestusLink, footer .siteFooter .brandLink .ACestusLinkNL {
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  margin-left: 30px !important;
+  background-image: url("./../../../../Images/ACestus/AC_LOGO.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .brandLink .ACestusLink, footer .siteFooter .brandLink .ACestusLinkNL {
+    margin: 0 auto;
+    width: 15vw;
+    height: 15vw;
+  }
+}
+@media screen and (min-width: 680px) {
+  footer .siteFooter .brandLink .ACestusLink, footer .siteFooter .brandLink .ACestusLinkNL {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+footer .siteFooter .brandLink .ACestusLink:hover {
+  transition: transform 0.5s;
+  transform: scale(1.05);
+}
+@media screen and (max-width: 679px) {
+  footer .siteFooter .digiCertImg {
+    margin-top: 30px;
+    width: 30%;
+  }
+}
+footer .w3cValidation {
+  margin: 30px 0;
+}
+footer .rightsNote {
+  padding: 0 0 30px 0;
+}
+
+/*************************************************
+  ■【祖父枠要素】共通設定
+  ■【祖父枠要素】
+      画面全体表示に於ける「印象を決める」、
+      表示サイズ・位置を決める
+ *************************************************/
+/*************************************************
+  ■【父枠要素】共通設定
+  ■【父枠要素】
+        【祖父要素枠】の中で動く画像を格納する枠の設定
+      1.【祖父要素枠】からはみ出る位の範囲・サイズを指定
+      2.【祖父要素枠】からはみ出た枠の位置を調整
+          【data-rellax-speed】に応じて移動するので、
+            空欄が出来ない様に上左方向へ【父枠】を移動する。
+            その移動量を指定（例「top:-50%; left:-50%;」）
+ *************************************************/
+/******************************************************************/
+/******************************************************************/
+/*************************************************
+  ■【祖父枠要素】
+     画面全体表示に於ける「印象を決める」、
+     表示サイズ・位置を決める
+     この枠の中で、イメージが動く。
+
+  ★ 【横方向】幅広画像向け設定   「縦横比・1:1.5」
+ *************************************************/
+/*************************************************/
+/*************************************************/
+.rlxParentElmW {
+  /* ★ 必須 */
+  position: relative;
+  /* 画面全体に於ける、サイズ・配置を設定 */
+  /***************************************/
+  width: 450px;
+  height: 300px;
+  width: 30vw;
+  height: 20vw;
+  /***************************************/
+  margin: 50px auto;
+  /* ★ 必須 */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px rgba(85, 121, 155, 0.7);
+}
+@media screen and (max-width: 679px) {
+  .rlxParentElmW {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 679px) {
+  .rlxParentElmW {
+    width: 75vw;
+    height: 50vw;
+  }
+}
+
+/*************************************************
+  画面全体表示に於ける、
+  印象付ける表示位置を決める「祖父枠要素」設定
+  この枠の中で、イメージが動く。
+  ★ 【縦方向】幅広画像向け設定   「縦横比・1.5:1」
+ *************************************************/
+.rlxParentElmH {
+  /* ★ 必須 */
+  position: relative;
+  /* 画面全体に於ける、サイズ・配置を設定 */
+  /***************************************/
+  width: 300px;
+  height: 450px;
+  /***************************************/
+  width: 20vw;
+  height: 30vw;
+  margin: 50px auto;
+  /* ★ 必須 */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px rgba(85, 121, 155, 0.7);
+}
+@media screen and (max-width: 679px) {
+  .rlxParentElmH {
+    width: 50vw;
+    height: 75vw;
+  }
+}
+
+/*************************************************
+  画面全体の表示に於ける、
+  印象付ける表示位置を決める「祖父枠要素」設定
+  この枠の中で、イメージが動く。
+  ★ 【背景】幅広画像向け設定   「縦横比・1.5:1」
+ *************************************************/
+.rlxParentElmBG {
+  /* ★ 必須 */
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  /* 画面全体に於ける、サイズ・配置を設定 */
+  /***************************************/
+  width: 120%;
+  height: 120%;
+  /***************************************/
+  margin: 50px auto;
+  /* ★ 必須 */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px rgba(85, 121, 155, 0.7);
+  opacity: 0.5;
+  z-index: -2;
+}
+
+/*************************************************/
+/*************************************************/
+/******************************************************************/
+/******************************************************************/
+/*************************************************
+  ■【父枠要素】
+   【祖父要素枠】の中で動く画像を格納する枠の設定
+
+   ★ 横広画像向け
+ *************************************************/
+/*************************************************/
+/*************************************************/
+.rlxImgFrameW {
+  /*************************************************
+    ■【祖父枠要素】に対し「はみ出したサイズ」の、
+     【父枠要素】サイズをここで決める。
+
+      pallax効果にて【父枠要素】は「上下」に移動する。
+      従って、
+    【父枠要素】のサイズは
+    【祖父枠要素】のサイズを大きくはみ出ないと、
+      空白が出てしまう。
+
+      ★「扱う画像の縦横比」（個別調整）
+        １．横広画像は、横サイズ「width:200%」を設定
+        ２．縦広画像は、縦サイズ「height:200%」を設定
+      ★「速度：data-rellax-speed」
+        １．早ければ、大きくする必要有り
+        ２．遅ければ、100% 以上、比較的小さい範囲設定も可
+   *************************************************/
+  width: auto;
+  height: 250%;
+  /*************************************************
+  【２】枠の表示位置
+    ■【祖父枠要素】に対し「はみ出したサイズ」の、
+     【父枠要素】サイズを【１】にて決める。
+      例）【父枠要素】サイズを【200%】と決めるとする。
+          この場合「上下100%（左右100%）」分の余裕が生まれる。
+          画像を【祖父枠要素】の中心に表示させたいので、
+          【父枠要素】を「top:-50%; left:-50%;」と、
+          余裕サイズの半分程移動をさせる。
+
+        ★「速度：data-rellax-speed」との関係
+          １．早ければ、動く方向と反対に大きく移動させて置く必要有り
+        ★「【祖父枠要素】枠の大きさ」との関係
+          １．100%以上のはみ出た部分を移動方向を考慮し、反対方向に動かす
+          ２．移動しても、「祖父枠要素」に空白が出ない位置に設定する
+   *************************************************/
+  position: absolute;
+  top: -80%;
+  left: -80%;
+  /* ★ 必須 */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/*************************************************
+  ■【父枠要素】
+   【祖父要素枠】の中で動く画像を格納する枠の設定
+
+   ★ 縦広画像向け
+ *************************************************/
+.rlxImgFrameH {
+  /*************************************************
+    ■【祖父枠要素】に対し「はみ出したサイズ」の、
+    【父枠要素】サイズをここで決める。
+
+      pallax効果にて【父枠要素】は「上下」に移動する。
+      従って、
+    【父枠要素】のサイズは
+    【祖父枠要素】のサイズを大きくはみ出ないと、
+      空白が出てしまう。
+
+      ★「扱う画像の縦横比」（個別調整）
+        １．横広画像は、横サイズ「width:200%」を設定
+        ２．縦広画像は、縦サイズ「height:200%」を設定
+      ★「速度：data-rellax-speed」
+        １．早ければ、大きくする必要有り
+        ２．遅ければ、100% 以上、比較的小さい範囲設定も可
+  *************************************************/
+  width: 220%;
+  height: auto;
+  /*************************************************
+  【２】枠の表示位置
+    ■【祖父枠要素】に対し「はみ出したサイズ」の、
+     【父枠要素】サイズを【１】にて決める。
+      例）【父枠要素】サイズを【200%】と決めるとする。
+          この場合「上下100%（左右100%）」分の余裕が生まれる。
+          画像を【祖父枠要素】の中心に表示させたいので、
+          【父枠要素】を「top:-50%; left:-50%;」と、
+          余裕サイズの半分程移動をさせる。
+
+        ★「速度：data-rellax-speed」との関係
+          １．早ければ、動く方向と反対に大きく移動させて置く必要有り
+        ★「【祖父枠要素】枠の大きさ」との関係
+          １．100%以上のはみ出た部分を移動方向を考慮し、反対方向に動かす
+          ２．移動しても、「祖父枠要素」に空白が出ない位置に設定する
+   *************************************************/
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  /* ★ 必須 */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/******************************************************************/
+/******************************************************************/
+/**********************************
+  画像そのものの「サイズ」設定
+ **********************************/
+.rlxImgCfg {
+  /*********************************
+   「画像のサイズ」を、
+   「親枠要素（画像と一緒に移動する枠）」に対して決める。
+   １．「100%」だと親枠と同じサイズ
+   ２．横広画像は、横サイズを「100%」に設定
+   ３．縦広画像は、縦サイズを「100%」に設定
+  **********************************/
+  width: 100%;
+  height: 100%;
+}
+
+.rlxImgCfgW {
+  /*********************************
+   「画像のサイズ」を、
+   「親枠要素（画像と一緒に移動する枠）」に対して決める。
+   １．「100%」だと親枠と同じサイズ
+   ２．横広画像は、横サイズを「100%」に設定
+   ３．縦広画像は、縦サイズを「100%」に設定
+  **********************************/
+  width: auto;
+  height: 100%;
+}
+
+.rlxImgCfgH {
+  /*********************************
+   「画像のサイズ」を、
+   「親枠要素（画像と一緒に移動する枠）」に対して決める。
+   １．「100%」だと親枠と同じサイズ
+   ２．横広画像は、横サイズを「100%」に設定
+   ３．縦広画像は、縦サイズを「100%」に設定
+  **********************************/
+  width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* スクロールの幅の設定 */
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* スクロールの背景の設定 */
+html::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: 0 0 4px #aaa inset;
+  box-shadow: 0 0 4px rgb(117, 106, 48) inset;
+}
+
+/* スクロールのつまみ部分の設定 */
+html::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgba(117, 106, 48, 0.7);
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+/* Chrome, Safari 対応 */
+p {
+  font-family: 游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 679px) {
+  .mbMgnTop05 {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  .mbMgnTop10 {
+    margin-top: 10px;
+  }
+}
+
+.colBlue {
+  color: blue;
+}
+
+.dline {
+  margin: 50px 0;
+  border-bottom: 5px dotted rgb(180, 194, 220);
+}
+@media screen and (max-width: 679px) {
+  .dline {
+    margin: 30px 0;
+  }
+}
+
+.sdline {
+  margin: 30px;
+  border-bottom: 2px dotted rgb(180, 194, 220);
+}
+@media screen and (max-width: 679px) {
+  .sdline {
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .forMB {
+    display: none;
+  }
+}
+@media screen and (max-width: 679px) {
+  .forPC {
+    display: none;
+  }
+}
+.whiteShadowLetter {
+  text-shadow: #fff 2px 0, #fff -2px 0, #fff 0 -2px, #fff 0 2px, #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px, #fff 1px 2px, #fff -1px 2px, #fff 1px -2px, #fff -1px -2px, #fff 2px 1px, #fff -2px 1px, #fff 2px -1px, #fff -2px -1px, rgba(0, 0, 0, 0.5) 3px 3px 3px;
+}
+
+@media screen and (min-width: 680px) {
+  .forMB {
+    display: none;
+  }
+}
+@media screen and (max-width: 679px) {
+  .forPC {
+    display: none;
+  }
+}
+.WP-displayNONE {
+  display: none;
+}
+
+.WP-title::before {
+  content: "■";
+  margin-right: 5px;
+}
+
+.WP-title {
+  margin: 0px 0 20px 0;
+  font-size: 1.8vw !important;
+  color: red !important;
+  color: gold !important;
+  text-shadow: 1px 1px 0 #333, -1px -1px 0 #333, -1px 1px 0 #333333, 1px -1px 0 #333, 0px 1px 0 #333, 0 -1px 0 #333, -1px 0 0 #333, 1px 0 0 #333;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 2px gold solid;
+  line-height: 1.1em;
+}
+@media screen and (max-width: 679px) {
+  .WP-title {
+    font-size: 22px !important;
+    padding-bottom: 5px;
+  }
+}
+
+.WP-dotsBorder {
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+.WP-width80 {
+  width: 80%;
+}
+
+.WP-marginLR20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.WP-mainImage {
+  max-width: 80%;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid blue;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.WP-mainImageMgnTB30 {
+  max-width: 80%;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid blue;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.WP-blockChar {
+  max-width: 80%;
+  margin: 0 auto;
+  color: #333;
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+  line-height: 1.5em;
+  font-size: clamp(0.95vw, 0.95vw, 16px);
+  padding: 20px 0 20px 30px;
+}
+@media screen and (max-width: 679px) {
+  .WP-blockChar {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 679px) {
+  .WP-blockChar {
+    padding-left: 0;
+  }
+}
+
+.WP-blockCharMgnTB30 {
+  max-width: 80%;
+  margin: 0 auto;
+  color: #333;
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+  line-height: 1.5em;
+  font-size: clamp(0.95vw, 0.95vw, 16px);
+  padding: 20px 0 20px 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 679px) {
+  .WP-blockCharMgnTB30 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 679px) {
+  .WP-blockCharMgnTB30 {
+    padding-left: 0;
+  }
+}
+
+.WP-galleryTitle::before {
+  content: "》";
+  margin-right: 5px;
+}
+
+.WP-galleryTitle {
+  margin: 50px 0 20px 0;
+  font-size: 24px !important;
+  color: #fffafa !important;
+  color: red !important;
+  text-shadow: 1px 1px 0 #333, -1px -1px 0 #333, -1px 1px 0 #333, 1px -1px 0 #333, 0px 1px 0 #333, 0 -1px 0 #333, -1px 0 0 #333, 1px 0 0 #333;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px red solid;
+  line-height: 1.1em;
+}
+@media screen and (max-width: 679px) {
+  .WP-galleryTitle {
+    font-size: 20px !important;
+  }
+}
+
+.WP-galleryImages {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.WP-galleryImages figure {
+  border: 2px solid blue;
+  border-radius: 20px;
+  overflow: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.WP-movieDefMgn {
+  height: 300px;
+  width: auto;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 20px;
+}/*# sourceMappingURL=forWordPressEditor.css.map */

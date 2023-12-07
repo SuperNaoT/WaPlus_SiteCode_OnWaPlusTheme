@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+// media query function.
+// @import "./scss/breakpoints";
+
+// 
+// 参照デバイス「PC」の場合のみ横スクロール
+// ****************************************
+@include mquery( "pc" ) {
+
+  /* 横スクロール全画面、イベント認識領域 */
+  .sideScrollArea{
+    overflow: hidden;
+  
+    /* 横スクロール全画面、ラッパー */
+    .allPanelWrapper{
+      display: flex;
+      
+      /* 実横スクロール、各１画面 */
+      .panel{
+        height: 100vh;
+  
+        /* １画面内レイアウト設定 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        box-shadow: 0 0 12px gray;
+        border-radius: 3px;
+  
+      }
+    }
+  }  
+}

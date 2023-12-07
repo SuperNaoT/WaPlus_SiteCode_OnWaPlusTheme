@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 事業活動・経営支援セクション
+// ***********************************************
+#OurPerformance {
+  @include style-section;
+  // セクション高さは「javascript」にて算出
+  background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+
+  // 
+  // イメージ画像「神宮スコアボード裏、太陽光燦燦と・・・」
+  .expImage {
+    
+    // 
+    // 引数は、動く画像そのもののトップ位置調整
+    // for DEBUG !!! 20221013
+    // @include style_ourPfmExpImageMB;
+    // top: 190px !important;
+
+    // @include style_ourPfmRellaxImageMB( 185px, 20%, 60%, 200px, -100%, -40% );
+    @include style_ourPfmRellaxImageMB( 185px, 20%, 60%, 200px, -70%, -50% );
+  }
+
+  // 
+  // 事業説明【１．経営支援事業】セクション用設定
+  .sectionContainer {
+    @include style_ourPfmSectionContainerMB(
+      "../../../../Images/management/ichoFestivalS.jpg",
+      "../../../../Images/management/basketballParkS.jpg",
+      "../../../../Images/management/kitchenCarS.jpg",
+      0px, 20px, 50px, 20px
+    );
+
+    // 
+    // アニメーション表示タイトル「込める思い・・・」
+    .performTitle {
+      @include style_sectionTitle;
+      .line { span { @include style_secSpan; } };
+    }
+
+    // 
+    // アニメーション移動画像「神宮球場・円形」
+    .circleO {
+      @include style_circleOMB( 1,
+        // calc( #{$mbMgeTopPos} + #{$mbPfmSecHeight} - 280px )+"px",
+        // calc( #{$mbMgeTopPos} + 250px ),
+        550px,
+        6%,
+        100px, 100px,
+        "../../../../Images/management/JGBaseballPark.jpg"
+      );
+    }
+  }
+}
+
+
+// 
+// ***********************************************
+// ★ 事業活動・IT WEB ソリューション セクション
+// ***********************************************
+#OurPerformanceITWEBSol {
+  @include style-section;
+  // セクション高さは「JavaScript」にて算出
+  background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+
+  // イメージ画像「ＰＣ画面内コード、青イメージ画像」
+  .expImage {
+    // @include style_ourPfmRellaxImageMB( 160px, 20%, 60%, 200px, -110% );
+    @include style_ourPfmRellaxImageMB( 160px, 20%, 60%, 200px, -80% );
+  }
+
+  // 
+  // 事業説明【２．IT WEB ソリューション事業】セクション用設定
+  .sectionContainer {
+    @include style_ourPfmSectionContainerMB(
+      "../../../../Images/ITWebSol/sourceCodeS.jpg",
+      "../../../../Images/ITWebSol/nodeProjectS.png",
+      "../../../../Images/ITWebSol/programmingLogoS.jpg"
+    );
+  }
+  box-shadow: 0 0 12px gray;
+  border-radius: 3px;
+}
+
+
+// 
+// ***********************************************
+// ★ 事業活動・大人の素敵雑貨/i-nekka セクション
+// ***********************************************
+#OurPerformanceInekka {
+  @include style-section;
+  // セクション高さは「JavaScript」にて算出
+  background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+
+  // イメージ画像「」
+  .expImage {
+    // @include style_ourPfmRellaxImageMB( 160px, 20%, 60%, 200px, -250%, 0 );
+    @include style_ourPfmRellaxImageMB( 160px, 20%, 60%, 200px, -80% );
+  }
+
+  // 
+  // 事業説明【３．オリジナル商品販売・いーねっか事業】セクション用設定
+  .sectionContainer {
+    @include style_ourPfmSectionContainerMB(
+      "../../../../Images/i-nekka/inekka-nitS.jpg",
+      "../../../../Images/i-nekka/inekka-sskS.jpg",
+      "../../../../Images/i-nekka/inekka-laceS.jpg"
+    );
+
+    // 
+    // アニメーション移動画像「i-nekkaロゴ」
+    .circleO {
+      @include style_circleOMB( 2,
+        // calc( #{$mbInekkaTopPos} + #{$mbInekkaSecHeight} - 280px ),
+        550px,
+        8%, 26vw, 26vw,
+        "../../../../Images/i-nekka/i-nekka_Edwardian_1024.jpg",
+        10px
+      );
+    }
+  }
+  box-shadow: 0 0 12px gray;
+  border-radius: 3px;
+}
+
+
+// 
+// ***********************************************
+// ★ 事業活動・クロコダイル製品/ACestus セクション
+// ***********************************************
+#OurPerformanceACestus {
+  @include style-section;
+  // セクション高さは「javascript」にて算出
+  background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+
+  // イメージ画像「」
+  .expImage {
+    // @include style_ourPfmRellaxImageMB( 160px, 20%, 60%, 200px, -300% );
+    @include style_ourPfmRellaxImageMB( 160px, 20%, 60%, 200px, -80% );
+  }
+  .sectionContainer {
+    @include style_ourPfmSectionContainerMB(
+      "../../../../Images/ACestus/ACestus1-500x350.jpg",
+      "../../../../Images/ACestus/ACestus-BankokS.jpg",
+      "../../../../Images/ACestus/ACestus-CrocoShineBlackSknS.jpg"
+    );
+
+    .circleO {
+      @include style_circleOMB( 3,
+        // calc( #{$mbACestusTopPos} + #{$mbACestusSecHeight} - 280px ),
+        550px,
+        8%,
+        40vw, 22.4vw,
+        "../../../../Images/ACestus/AC_LOGO-WGWD.png",
+        10px
+      );
+    }
+  }
+}

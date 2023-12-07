@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+// 
+// ***********************************************
+// ★ 共通利用値定義
+// ***********************************************
+// 画面最大有効幅
+$areaMaxWidth:  1200px;        // 1170px;
+$areaMaxWidthL: 1500px;        // 1170px;
+
+// $pcDefaultSectionTitle: 3.2vw;      // 3.6vw 左側にバーの付いたタイトル
+// $pcDefaultSectionSubTitle: 2.3vw;   // 2.5vw サービス案内内「■付き」、各事業説明ギリシャ数字付きタイトル
+// $pcDefaultFSize: 1vw;              // 16px 1vw;
+// $pcOurServicesFSize: 1vw;           // サービスのご案内セクション、個別項目文字サイズ定義
+
+// // 
+// // 【参考】齋藤建築様設定
+// // アニメーション「横バー付き」タイトル文字サイズ
+// $animateTitleCharSize:   42px;
+// // サブページ内ページ上部概要説明文字列、文字サイズ設定
+// $pageExpCharSizePC: 18px;
+// // 一般説明文字列、文字サイズ設定
+// $articleCharSize:   16px;
+// // ULリスト内大き目文字列
+// $articleULCharSize:   17px;
+
+$pcDefaultSectionTitle: 42px;       // 3.6vw 左側にバーの付いたタイトル
+$pcDefaultSectionTitle: 2.56vw;       //  5vw > 82px
+$pcDefaultSectionTitle: clamp( 2.56vw, 2.56vw, 42px);
+
+$pcDefaultSectionArtic: 19px;       // バー付きタイトル直下、ページ概要説明文章文字サイズ「旧設定：$pcDefaultFSize*1.2」
+$pcDefaultSectionArtic: 1.15vw;       // バー付きタイトル直下、ページ概要説明文章文字サイズ「旧設定：$pcDefaultFSize*1.2」
+$pcDefaultSectionArtic: clamp( 1.15vw, 1.15vw, 19px);
+
+$pcDefaultSectionSubTitle: 30px;    // 23px 2.5vw サービス案内内「■付き」、各事業説明ギリシャ数字付きタイトル
+$pcDefaultSectionSubTitle: 1.8vw;    // 23px 2.5vw サービス案内内「■付き」、各事業説明ギリシャ数字付きタイトル
+$pcDefaultSectionSubTitle: clamp( 1.8vw, 1.8vw, 30px );    // 23px 2.5vw サービス案内内「■付き」、各事業説明ギリシャ数字付きタイトル
+
+$pcOurServiceTitle: 20px;    // 23px 2.5vw サービス案内内「■付き」、各事業説明ギリシャ数字付きタイトル
+$pcOurServiceTitle: 1.2vw;    // 23px 2.5vw サービス案内内「■付き」、各事業説明ギリシャ数字付きタイトル
+$pcOurServiceTitle: clamp( 1.2vw, 1.2vw, 20px );    // 23px 2.5vw サービス案内内「■付き」、各事業説明ギリシャ数字付きタイトル
+
+$pcOurServicesFSize: 15px;          // 17px サービスのご案内セクション、個別項目文字サイズ定義
+$pcOurServicesFSize: 0.9vw;          // 17px サービスのご案内セクション、個別項目文字サイズ定義
+$pcOurServicesFSize: clamp( 0.9vw, 0.9vw, 15px );          // 17px サービスのご案内セクション、個別項目文字サイズ定義
+
+$pcDefaultFSize: 16px;              // 16px 1vw;
+$pcDefaultFSize: 0.95vw;              // 16px 1vw;
+$pcDefaultFSize: clamp( 0.95vw, 0.95vw, 16px );              // 16px 1vw;
+
+$pcDefaultSmallFSize: 14px;              // 14px 1vw;
+$pcDefaultSmallFSize: 0.92vw;              // 14px 1vw;
+$pcDefaultSmallFSize: clamp( 0.92vw, 0.92vw, 14px );              // 14px 1vw;
+
+// 
+// ***********************************************
+// ***********************************************
+// ***********************************************
+//  モバイル画面表示時用定義
+// ***********************************************
+// ***********************************************
+// ***********************************************
+// 
+// サービス一覧セクション、高さ
+// $mbEachSecHeight   : 850px;
+// $mbDefaultSectionTitle: 6vw;        // 左側にバーの付いたタイトル
+// $mbDefaultSectionSubTitle: 4.5vw;   // 4.5vwサービス案内内■付き、各事業説明ギリシャ数字付きタイトル
+// $mbDefaultFSize: 4vw;               // 4vw
+
+// // 
+// // 【参考】齋藤建築様設定
+// // アニメーション「横バー付き」タイトル文字サイズ
+// $animateTitleCharSizeMB: 20px;
+// // サブページ内ページ上部概要説明文字列、文字サイズ設定
+// $pageExpCharSizeMB: 14px;
+// // 一般説明文字列、文字サイズ設定
+// $articleCharSizeMB: 14px;
+// // ULリスト内大き目文字列
+// $articleULCharSizeMB: 14px;
+
+
+$mbDefaultSectionTitle: 25px;        // 左側にバーの付いたタイトル
+$mbDefaultSectionArtic: 15px;        // バー付きタイトル直下、ページ概要説明文章文字サイズ「旧設定：$mbDefaultFSize*1.1」
+$mbDefaultSectionSubTitle: 20px;     // 4.5vwサービス案内内■付き、各事業説明ギリシャ数字付きタイトル
+$mbDefaultSectionTableTitle: 15px;     // 4.5vwサービス案内内■付き、各事業説明ギリシャ数字付きタイトル
+$mbOurServiceTitle: 16px;
+$mbDefaultFSize: 14px;               // 4vw
+
+$mbDefaultLineHeight: 1.8em;
+// $mbDefaultLineHeight: 8em;
+
+//
+// ***********************************************
+// ★ 企業理念・セクション
+// ***********************************************
+// 企業理念セクション、高さ
+$mbPhiSecHeight: 100vh;
+//
+// ***********************************************
+// ★ サービスのご案内・セクション
+// ***********************************************
+// サービス一覧セクション、高さ
+$mbSvceHeight   : 1250px; // ★1300px;    // 160vh
+$mbSvceHeight   : 1450px; // 1300px
+// サービス一覧セクション、組込画像、高さ
+$mbSvceImgHeight: 1090px; // ★1120px;
+$mbSvceImgHeight: 1290px;
+// サービス一覧セクション、縦方向アニメバー、高さ
+$vtclBarLgth    : 450px; // 400px 320px 380px;
+$vtclBarLgthMB  : 300px; // ★380px;
+$vtclBarLgthMB  : 380px;
+
+//
+// ***********************************************
+// ★ 経営支援・セクション
+// ***********************************************
+// 経営支援セクション、先頭位置（倫理セク＋サービス紹介）
+$mbMgeTopPos   : calc( 100vh + 40px + #{$mbSvceImgHeight} );
+// 経営支援セクション、高さ
+
+// セクション高さは「javascript」にて算出・・・
+// なのだけど、【Pallax効果】で激しく画像位置がズレる！
+$mbPfmSecHeight: 808px;
+
+//
+// ***********************************************
+// ★ IT WEB ソリューション・セクション
+// ***********************************************
+// IT WEB ソリューションセクション、先頭位置（倫理セク＋サービス紹介）
+$mbITWebTopPos : calc( 100vh + 40px 
+                             + #{$mbSvceImgHeight}
+                             + #{$mbPfmSecHeight } );
+// IT WEB ソリューションセクション、高さ
+$mbITWebSecHeight: 880px;
+
+//
+// ***********************************************
+// ★ i-nekka 大人の素敵雑貨・セクション
+// ***********************************************
+// i-nekka 大人の素敵雑貨セクション、先頭位置（倫理セク＋サービス紹介）
+$mbInekkaTopPos : calc( 100vh + 40px 
+                            + #{$mbSvceImgHeight }
+                            + #{$mbPfmSecHeight  }
+                            + #{$mbITWebSecHeight} );
+// i-nekka 大人の素敵雑貨セクション、高さ
+$mbInekkaSecHeight: 830px;
+
+//
+// ***********************************************
+// ★ ACestus クロコダイル・セクション
+// ***********************************************
+// ACestus クロコダイルセクション、先頭位置（倫理セク＋サービス紹介）
+$mbACestusTopPos : calc( 100vh + 40px 
+                            + #{$mbSvceImgHeight  }
+                            + #{$mbPfmSecHeight   }
+                            + #{$mbITWebSecHeight }
+                            + #{$mbInekkaSecHeight} );
+// ACestus クロコダイルセクション、高さ
+$mbACestusSecHeight: 880px;
+
+// 
+// ギャラリー関連定義
+$btnBgColor: rgba(70,118,215,0.7);
+$btnHoverBgColor: aquamarine;
+
+//
+// ***********************************************
+// ★ お知らせ/ブログ・セクション
+// ***********************************************
+// お知らせ/ブログセクション、先頭位置（倫理セク＋サービス紹介）
+$mbInfoTopPos : calc( 100vh + 40px 
+                            + #{$mbSvceImgHeight   }
+                            + #{$mbPfmSecHeight    }
+                            + #{$mbITWebSecHeight  }
+                            + #{$mbInekkaSecHeight }
+                            + #{$mbACestusSecHeight} - 300px );
+// お知らせ/ブログセクション、高さ
+$mbInfoSecHeight: 700px;
+
+// ***********************************************
+// ***********************************************
+// ***********************************************
+
+// 
+// *********************************************
+// *********************************************
+// WordPress 投稿記事作成中設定可能「CSS」用各種設定
+// *********************************************
+// 投稿記事、メインタイトル文字サイズ
+$WPBlkTitleCharSize:   1.8vw;          // 30px;
+$WPBlkTitleCharSizeMB: 22px; // 25px;
+
+// 投稿記事、サブタイトル文字サイズ
+$WPBlkScndTitleCharSize:   24px;
+$WPBlkScndTitleCharSizeMB: 20px;
+

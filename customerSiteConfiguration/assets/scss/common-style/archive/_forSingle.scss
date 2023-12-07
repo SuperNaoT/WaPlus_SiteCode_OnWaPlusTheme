@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/* アイキャッチを中央寄せにする */
+.eye-catch-wrap{
+  text-align: center;
+}
+
+// 
+// ***********************************************
+// ★ 個別投稿ページ（single.php）表示用設定
+// ***********************************************
+// 
+// ここをカテゴリ毎のクラス名にかえるか！★★★
+.postPageContents {
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+  
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    // 
+    // rect形式画像3枚セットの位置決め用定義
+    position: relative;
+    top: 0;
+    left: 0;
+
+    // border: 2px dashed red;       // for DEBUG!!!
+
+    .rollingTitle {
+      @include style-rollingTitle;
+
+      // 
+      // アニメーションタイトルの文字間を調整
+      .msgMainTitle {
+        .mbLine { span { letter-spacing: -0.05em; } };
+        .pcLine { span { letter-spacing: -0.05em; } };
+      }
+    
+      // border: 2px dashed lime;       // for DEBUG!!!
+
+      @include mquery( 'pc' ) { width: 80%; }
+
+    }    
+
+    // 
+    // 投稿記事ページ、本体メッセージ詳細
+    #detailInfo {
+      #forExample {
+
+        // @include mquery( 'pc' ) { width: 100% !important; }
+
+        // font-size:  1vw !important;   // 1.2vw; 1.5vw
+        font-size: $pcDefaultFSize !important;
+        line-height: 2em;
+        letter-spacing: 1px;
+    
+        margin-left: 4vw !important;   // 10vw;
+
+        .uline {
+          margin: 5vh 0 8vh 0;
+          border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+        }
+    
+        .sBysBlk {
+          @include style-sBysBlk();
+
+          // border: 2px dashed red;       // for DEBUG!!!
+
+          margin-top: 50px;
+
+          .eachPostDigest{
+
+            // サイドバーと並列並び
+            @include mquery( "pc" ) { width: 70%; }
+
+            .infoArea {
+              background-color: rgba( 254, 249, 250, 0.8 );
+              margin: 0 20px;
+              padding-top: 50px;
+              
+              border-radius: 20px;
+              border: 1px solid black;
+
+              @include mquery( 'pc' ) {
+                width:     90%;
+                margin: 0 auto;
+                // border: 2px dashed red;
+              }
+
+              // 
+              // 記事記載領域外枠タイトルの設定
+              .postDate { @include style-postDate( "red" ); }
+            }  
+          }
+
+          // // 
+          // // *********************************************
+          // // *********************************************
+          // // ■ 投稿概要一覧リスト・ページ内、右側サイドバー設定
+          // // *********************************************
+          @include style-sidebar;
+
+        }
+      }
+
+      // 
+      // parallax効果の為の枠（親）原点指定
+      // position: relative;    
+      // background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+    }
+  }
+
+  // 
+  // ＰＣ用定義
+  // ***********************************
+  @include mquery( "pc" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+    
+    .singlePageBkImg  {
+      @include style-imageDispPos( "../../../../Images/newsBlog/newsImage.jpg", 65vh, 30vh );
+      z-index: 0;
+    }
+    .singlePageBkImgBlog  {
+      @include style-imageDispPos( "../../../../Images/newsBlog/blogImage.jpg", 65vh, 30vh );
+      z-index: 0;
+    }
+
+    #forExample {
+      transform: translateX( -40% );
+      opacity: 0;
+    }
+
+  }
+
+  // 
+  // モバイル用定義
+  // ***********************************
+  @include mquery( "mb" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 138vh;  
+
+    .singlePageBkImg  {
+      @include style-imageDispPos( "../../../../Images/newsBlog/newsImageMB.jpg", 65vh, 50vh );          // 65vh 30vh
+      z-index: 0;
+      // border: 1px solid black;
+    }
+    .singlePageBkImgBlog  {
+      @include style-imageDispPos( "../../../../Images/newsBlog/blogImageMB.jpg", 65vh, 30vh );
+      z-index: 0;
+    }
+
+    #forExample {
+      transform: translateX( 40% );
+      opacity: 0;
+
+    } 
+  }
+}
+
+footer {
+  .siteFooter {
+    #footerNav {
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+    }
+  }
+}

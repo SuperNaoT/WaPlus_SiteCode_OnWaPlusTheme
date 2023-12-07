@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+@mixin style-common {
+  @include style-section;
+  // セクション高さは「javascript」にて算出
+  background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+}
+// 
+// ***********************************************
+// ★ 事業活動・経営支援セクション
+// ***********************************************
+#OurPerformance {
+  @include style-common;
+
+  // 
+  // アニメーションイメージ画像「神宮スコアボード裏、太陽光燦燦と・・・」
+  .expImage {                   // ★★★★
+    // @include style_ourPfmRellaxImage( 200px, 10%, 450px, -40% );
+    @include style_ourPfmRellaxImage( 200px, 10%, 35%, 450px, -40% );
+  }
+
+  // 
+  // 事業説明【１．経営支援事業】セクション用設定
+  .sectionContainer {
+    @include style_ourPfmSectionContainer(
+      "../../../../Images/Management/00_index/ichoFestivalS.jpg",
+      "../../../../Images/Management/00_index/basketballParkS.jpg",
+      "../../../../Images/Management/00_index/kitchenCarS.jpg",
+      39%,
+      0px, 20px, 30px, 20px
+    );
+
+    // 
+    // アニメーション移動画像「神宮球場・円形」
+    .circleO {
+      @include style_circleL;
+      display:  flex;
+      position: absolute;
+      top:  38%;
+      right: 5%;
+
+      background-image: url("../../../../Images/Management/00_index/JGBaseballPark.jpg");
+    }
+
+    // 
+    // アニメーション表示タイトル「込める思い・・・」
+    // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+    .performTitle {
+      @include style_sectionTitle;
+      .line { span { @include style_secSpan; } };
+    }
+    // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+  }
+}
+
+
+// 
+// ***********************************************
+// ★ 事業活動・IT WEB ソリューション セクション
+// ***********************************************
+// .ourPfmStyle {
+#OurPerformanceITWEBSol {
+  @include style-common;
+
+  // 
+  // アニメーションイメージ画像「ノートパソコン」
+  .expImage {
+    // @include style_ourPfmRellaxImage( 200px, 60%, 450px, -60% );
+    @include style_ourPfmRellaxImage( 200px, 60%, 35%, 450px, -60% );
+  }
+
+  // 
+  // 事業説明【２．IT WEB ソリューション事業】セクション用設定
+  .sectionContainer {
+    @include style_ourPfmSectionContainer(
+      "../../../../Images/ITWebSol/00_index/sourceCodeS.jpg",
+      "../../../../Images/ITWebSol/00_index/nodeProjectS.png",
+      "../../../../Images/ITWebSol/00_index/programmingLogoS.jpg"
+    );
+  }
+}
+
+
+// 
+// ***********************************************
+// ★ 事業活動・大人の素敵雑貨/i-nekka セクション
+// ***********************************************
+#OurPerformanceInekka {
+  @include style-common;
+
+  //
+  // アニメーションイメージ画像「いーねっか：レースに因る花弁群」
+  .expImage {
+    // @include style_ourPfmRellaxImage( 200px, 60%, 450px, -70% );
+    @include style_ourPfmRellaxImage( 200px, 60%, 35%, 450px, -70% );
+  }
+
+  // 
+  // 事業説明【３．織ぎなる商品販売・いーねっか事業】セクション用設定
+  .sectionContainer {
+    @include style_ourPfmSectionContainer(
+      "../../../../Images/i-nekka/00_index/inekka-nitS.jpg",
+      "../../../../Images/i-nekka/00_index/inekka-sskS.jpg",
+      "../../../../Images/i-nekka/00_index/inekka-laceS.jpg"
+    );
+
+    .circleO {
+      @include style_circleL;
+      display: flex;
+      position: absolute;
+      top: 55%;   // 50%;
+      right: 5%;
+
+      border-radius: 10%;
+      background-image: url("../../../../Images/i-nekka/i-nekka_Edwardian_1024.jpg");
+
+    }
+  }
+}
+
+
+// 
+// ***********************************************
+// ★ 事業活動・クロコダイル製品/ACestus セクション
+// ***********************************************
+#OurPerformanceACestus {
+  @include style-common;
+
+  //
+  // アニメーションイメージ画像「ACestus：クロコダイルレザースタック」
+  .expImage {
+    // @include style_ourPfmRellaxImage( 200px );
+    @include style_ourPfmRellaxImage( 200px, 60%, 35%, 450px, -80% );
+  }
+
+  // 
+  // 事業説明【４．織ぎなる商品販売・ACestus事業】セクション用設定
+  .sectionContainer {
+    @include style_ourPfmSectionContainer(
+      "../../../../Images/ACestus/00_index/ACestus-500x350.jpg",
+      "../../../../Images/ACestus/00_index/ACestus-BankokS.jpg",
+      "../../../../Images/ACestus/00_index/ACestus-CrocoShineBlackSknS.jpg"
+    );
+
+    .circleO {
+      position: absolute;
+      top: 70%;    // 55%;
+      right: 5%;
+
+      width:  18vw;
+      height: 10vw;
+      box-shadow: 0 0 12px rgba(100, 124, 146, 0.7);
+      border-radius: 15px;
+      background-size: cover;
+      background-image: url("../../../../Images/ACestus/00_index/AC_LOGO-WGWD.png");
+    }
+  }
+}

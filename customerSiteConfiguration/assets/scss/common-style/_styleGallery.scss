@@ -1,0 +1,168 @@
+@charset 'utf-8';
+
+  // 
+  // ***********************************************
+  // ***********************************************
+  // ***********************************************
+  // 画像ギャラリー用個別定義 
+  // ***********************************************
+  // ***********************************************
+  .grid {
+
+    background-color: rgba(117,106,48,0.5);
+    padding: 10px;
+    border-radius: 8px;
+
+    // 
+    // ２次元配列、グリッドレイアウト指定
+    display: grid;
+    // 
+    // 【column：柱・縦方向（列）】の「横幅」
+    // ☛ 自動配置・最小値「100px」/ 最大値「1fr」少なくとも「１個」の繰返し
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));    // 300px
+    //
+    // ブロック間インターバル 
+    gap: 10px; // 20px;
+    // 
+    // 【row：行・横方向（行）】の「高さ」指定
+    grid-auto-rows: 100px;        // 200px;
+    // 
+    // グリッドデータの配置指定
+    // 1．row   : 各行に順番に配置・【横】に並べていく
+    // 2．dense : 空白グリッドを埋めてパッキングをするようにグリッドアイテムが自動配置される。
+    //          （グリッドアイテムのサイズの大小をもとにパッキングの順番が決められる）
+    grid-auto-flow: row dense;
+ 
+    .-h1 {
+      grid-row-end: span 1;
+    }
+    .-h2 {
+      grid-row-end: span 2;     // 行の高さ、グリッド１個の高さを指定
+    }
+    .-h3 {
+      grid-row-end: span 3;
+    }
+    .-w1 {
+      grid-column-end: span 1;
+    }
+    .-w2 {
+      grid-column-end: span 2;     // 行の高さ、グリッド１個の高さを指定
+    }
+    .-w3 {
+      grid-column-end: span 3;
+    }
+
+    .-sm {
+      grid-row-end: span 2;
+    }
+    .-md {
+      grid-row-end: span 2;     // 行の高さ、グリッド１個の高さを指定
+    }
+    .-lg {
+      grid-row-end: span 3;
+    }
+    .-fl {
+      grid-row-end: span 1;
+      grid-column: 1/-1;
+    }
+  }
+  
+  .item {
+    grid-column-start: auto;
+    grid-row-start: auto;
+    &.blue {
+      border: 2px solid #0CAAF5;
+      border-radius: 5px;
+    }
+    &.red {
+      border: 2px solid #F54487;
+      border-radius: 5px;
+    }
+    &.green {
+      border : 2px solid #00DE73;
+      border-radius: 5px;
+    }
+
+    &__image {
+      display: grid;
+      grid-template-rows: auto min-content;
+      height: 100%;
+  
+      // a {
+        .-image {
+          background-size: cover;
+          background-position: center;
+          border-radius: 5px;
+        }
+    
+        .-text {
+          // background-color: #fff;
+          margin: 2px auto;
+          // margin-bottom: 0;
+          font-weight: 500;
+          font-size: 14px;        // 1rem;
+          line-height: 1.5;
+          letter-spacing: 0.1em;
+          color: #333;
+        }  
+      // }
+    }
+  }
+  // ***********************************************
+  // ***********************************************
+  // ***********************************************
+  // ***********************************************
+
+  // ***********************************************
+  // ***********************************************
+  // 画像ソートボタン用定義
+  // ***********************************************
+  // ***********************************************
+
+  /*＝＝＝並び替えボタンのCSS*/
+  .sort-btn{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:20px 20px;
+    color: white;
+    @include mquery( "pc" ) { margin-bottom: 120px; }
+
+    li {
+      background:#eee;
+      background: $btnBgColor;
+      border-radius:10px;
+      cursor: pointer;
+      padding: 10px;
+      // margin:0 10px;
+      margin:0;
+      font-size: $pcOurServiceTitle !important;
+      @include mquery( "pc" ) { width: 150px; }
+    }
+    li.active{/*ボタンに現在地＝activeというクラス名がついたら背景色を変更*/
+      background:#ccc;
+      background: lime;
+      color: #333;
+    }
+  
+  }
+
+  /*横幅が520px以下になった際の指定*/
+  @include mquery( "mb" ) {
+    .sort-btn{
+      width: 100%;
+      // justify-content: space-between;
+      padding-left: 0;
+
+      @include DEBUG-border( red, dashed, 2px );
+
+      li {
+        // font-size: 2vw;
+        font-size: $mbOurServiceTitle !important;
+        width:120px !important;
+        padding: 10px 8px;
+        margin:0 0 10px 0;
+        text-align:center;  
+      }
+    }
+  }

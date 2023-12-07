@@ -1,0 +1,205 @@
+@charset "utf-8";
+// 
+// ***********************************************
+// ★ サービスのご案内・セクション
+// ***********************************************
+#OurServices {
+
+  @include style-section;                           // relative
+  background-color: rgba( 246, 246, 246, 0.5 );   // #f6f6f6
+
+  @include mquery( "mb" ) { position: relative; height: $mbSvceHeight; }
+  @include mquery( "pc" ) { height: 100vh; }
+
+  // border: 2px dashed red;
+
+  // 【Parallax】アニメーション画像
+  // **************************************************
+  // **************************************************
+  // **************************************************
+  // **************************************************
+  @include style-parallax();
+  // **************************************************
+  // **************************************************
+  // .expImage {
+  //   // @include style_expImage;          // absolute;
+  //   @include style-expImageOS;          // absolute;          // 2023/12/06
+  //   width:  30%;       // 38%;
+  //   top:    10vh;        // 2.5vh;
+  //   left:   63% !important;
+  //   height: 80vh;       // 95vh;
+
+  //   @include mquery( "mb" ) {
+  //     width: 95% !important;
+  //     top: 105px !important;
+  //     left: 2.5% !important;
+  //     height: $mbSvceImgHeight;    // 120vh 105vh
+  //     // margin: 0 auto;
+  //     opacity: 0.3;
+  //   }
+  // }
+
+  .innerSection {
+    @include style-innerSection;
+  }
+
+  .sectionContainer {
+    @include style_sectionContainer;
+
+    @include mquery( "mb" ) { width: 100%; height: $mbSvceHeight; }
+    @include mquery( "pc" ) { width:  50%; height: 100vh; }
+    
+    // セクションタイトル：サービスのご案内
+    .serviceTitle {
+      @include style_sectionTitle;
+      .line { span { @include style_secSpan; } };
+    }
+
+    // メッセージ文体・３サービスの括り
+    .msgDetailService {
+      @include style-msgDetail;
+      @include mquery( "mb" ) { opacity: 1; margin-top: 55px; margin-left: 0; }
+      @include mquery( "pc" ) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;  
+        margin-left: 0;
+        @if $GB_ANIMATE_FLAG == 1 {
+          transform: translateX( 20% );    // NTAD -20%
+        }
+      }
+      width: 100%;
+
+      // 個別サービス
+      .svcKind {
+        position: relative;
+        top: 0px;
+        left: 0;
+        
+        // width:  33%;
+        width:  30%;
+        height: 500px;  
+        @include mquery( "mb" ) {
+          // width: 90%;
+          width: 80%;
+          height: $vtclBarLgthMB; //250px; // 330px; // 43vh 30vh calc( $mbSvceHeight / 2.5 );     // 30vh
+          // margin-bottom: 60px;
+          margin: 0 auto;
+          margin-bottom: 30px;      //  30px;
+          @if $GB_ANIMATE_FLAG == 1 {
+            transform: translateX( 20% );    // NTAD -20%
+            opacity: 0;
+          }
+          z-index: 1;
+        }
+
+        .barSet {
+          position: absolute;
+          height: 100%;       // 500px;
+          width: 10px;
+          @include mquery( "mb" ) { top:  7px; }; // 70%
+          @include mquery( "pc" ) { top: 25px; };
+          overflow: hidden;
+
+          // border: 1px solid lime;
+        }
+
+        .vtclBar {
+          height: 1px;
+          width: $vtclBarLgth;
+          @include mquery( "mb" ) { width: $vtclBarLgthMB; }
+          
+          background-color : #665A1A;
+          position: absolute;
+          top:  0;
+          left: 5px;
+          /******************************/
+          /******************************/
+          @if $GB_ANIMATE_FLAG == 1 {
+            transform-origin: top left;
+            transform: rotateZ(90deg);
+          }
+          /******************************/
+          /******************************/
+        }
+        .vtclBarSdw {
+          height: 1px;
+          width: $vtclBarLgth;
+          @include mquery( "mb" ) { width: $vtclBarLgthMB; }
+
+          background-color : rgba( 102,90,26,0.1 );
+          position: absolute;
+          top: 0;
+          left: 4px;
+          @if $GB_ANIMATE_FLAG == 1 {
+            transform-origin: bottom left;
+            transform: rotateZ(90deg);
+          }
+        }
+        h3 {       // p
+          @include mquery( "mb" ) {
+            font-size: $mbDefaultSectionSubTitle; // 16px;
+            margin-top: 30px;   // 10px
+            line-height: 1.5em; // 1em;
+          }
+          @include mquery( "pc" ) {
+            // font-size: 1.2vw; // 20px;
+            // font-size: calc( $pcDefaultSectionSubTitle * 0.6 );
+            font-size: $pcDefaultSectionSubTitle;
+            font-size: $pcOurServiceTitle;
+            margin-top: 50px;   // 20px
+            line-height: 1.5em;
+          }
+          font-weight: normal;  // 700;
+          margin-left: 10px;    // 10px
+          color: rgba(3,3,3,1);
+        }
+        ul {
+          margin-top: 30px;
+          @include mquery( "mb" ) {
+            .pcLabel { display: none; }
+          }
+          @include mquery( "pc" ) {
+            .mbLabel { display: none; }
+          }
+          li {
+            @include mquery( "mb" ) {
+              font-size: $mbDefaultFSize;
+              margin: 0 10px;
+              margin-left: 20px;
+              margin-bottom: 1.5vh;
+              // line-height: 1.2em;
+              line-height: 1.5em;
+            }
+            @include mquery( "pc" ) {
+              font-size: $pcOurServicesFSize;
+              margin: 0 10px;
+              margin-left: 20px;
+              font-weight: normal;      // bold;
+              line-height: 2em;
+            }
+            border-bottom: 1px solid rgb(3,3,3);  
+          }
+        }
+        //「and more...」button settings
+        .andMoreBtn {
+          // position: absolute;
+          @include mquery( "mb" ) {
+            // top: 33vh; // calc( ($mbSvceHeight/3)+5 )vh;  // 24vh
+            // font-size: 16px;  // and more Btn
+            margin-top:  20px;
+            margin-left: 60px;
+            // margin-bottom: 30px;
+            // top: 250px; // 220px; absolute
+            // left: 20%; // 20% 25% 60px;  
+          }
+          @include mquery( "pc" ) {
+            position: absolute;
+            top: 320px; // 300px;
+            left: 35%; //60px;  
+          }
+        }
+      }
+    }
+  }
+}

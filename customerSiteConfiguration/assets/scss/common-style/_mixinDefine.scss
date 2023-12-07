@@ -1,0 +1,1837 @@
+@charset "utf-8";
+// 
+// ***********************************************
+// ナビゲーションメニュー下部、アニメーションライン定義
+// ***********************************************
+// 
+// ★   スタイルセット定義部
+// 
+// 【参考：https://www.asobou.co.jp/blog/web/sass-variable】
+@mixin style-navUnderLine( $specifiedID: "#navigation", $targetTAG: "a" ) {
+  #{$specifiedID} #{$targetTAG} {
+    display: inline-block;
+    line-height: 1.5em;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  #{$specifiedID} #{$targetTAG}:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    transform: translate(-100%, 0);
+    transition: transform 500ms;
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+    content: "";
+  }
+  #{$specifiedID} #{$targetTAG}:hover:after {
+    transform: translate(0, 0);
+  }
+}
+
+// 
+// ***********************************************
+// 各種ページ内、内部リンクアイコン用定義
+// ***********************************************
+.extLnkIcon {
+  color: blue;
+  margin: 0 0 4px 10px;
+}
+
+// 
+// ***********************************************
+// ***********************************************
+// 
+// ★   スタイルセット定義部
+// 
+// ***********************************************
+// トップページ「セクション」共通書式
+// ***********************************************
+@mixin style-section {
+  // セクション内配置要素の原点を設定
+
+  position: relative;
+  @include mquery( "pc" ) { top: 0; left: 0; height: 100vh; }
+
+  // 横並び・中央配置
+  display: flex;
+  align-items: center;
+
+  z-index: 0;
+
+  // // 
+  // // ***** 20220321
+  // // 【Knowledge】＊＊＊＊＊
+  // // ※ アニメーションでの注意点！
+  // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+  // //   その親要素について、はみ出た部分に非表示を設定しないと、
+  // //   画面を横にスワップすると、画面がグニャグニャと動く。
+  // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+  // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+  overflow: hidden;
+
+  // overflow: visible;
+  // border: 2px dashed red;
+
+}
+
+@mixin style-innerSection {
+
+  border: 2px dashed purple;
+
+  position: relative;
+  width: 100%;
+  max-width: $areaMaxWidthL;
+  // max-width: 1000px;     // for DEBUG!
+  margin: 0 auto;
+  overflow: hidden;
+
+}
+
+
+// 
+// ***********************************************
+// ★ トップページ内セクション「メッセージ詳細記述」共通定義
+// ***********************************************
+@mixin style-msgDetail( $fSize: 1.2vw ) {
+
+  // border: 1px solid lime;
+
+  // 
+  // 各ページ内、各セクション内、本文記事表示設定
+  @include mquery( "mb" )  {
+    font-size:   $fSize;    // 3vw; 14px 2.2vw 1.5vw
+    line-height: $mbDefaultLineHeight !important;
+    // margin-left: 3.1vw;       // 3vw 20px 80px;
+    margin-left: 10vw;        // 20221018 Change
+    letter-spacing: 0px;
+  }
+  @include mquery( "pc" )  {
+    font-size:   $fSize;     // *****1.8vh; 1vw 1.5vw
+    line-height: 2em;       // *****1.8em;
+    margin-left: 1vw;       // 20px 80px;
+    letter-spacing: 1px;
+  }
+
+  font-weight: normal;      // bold;
+  color: #393327;
+  // color: #647C92;
+  @if $GB_ANIMATE_FLAG == 1 {
+    opacity: 0;
+  }
+}
+
+//
+// ***********************************************
+// ★ トップページ内「事業説明」「事業活動」「会社概要」「ご案内」セクション共通定義
+// ***********************************************
+// 
+// 
+// ★ modified 2023/12/07
+//    style-parallax に置換された！
+// 
+// // ★ Added 2023/12/06
+// // 
+// @mixin style-expImageOS {
+
+//   // height: 63vh; //500px;
+
+//   // 
+//   // セクションの左上を原点とし、
+//   // 個別画像の配置位置を設定する。
+//   position: absolute;
+//   // 
+//   // 画像位置は、各セクション対応SCSSにて設定
+
+//   /* はみ出し部分は非表示・内部画像の窓枠設定 */
+//   overflow: hidden;
+
+//   border: 1px solid #333;
+//   border-radius: 15px;
+//   box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+
+//   img {
+//     /* style_expImage定義の「absolute」が「relative」の役目と成る */
+//     /* style_expImage定義の原点に対して、実画像の表示、絶対位置を指定 */
+//     /* 無くても良いかも・・・ */
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+    
+//     // 
+//     //「スクロールに依る移動にて隙間が空かない様」に、
+//     //  親要素のサイズの「100%」ではなく、幾分多きめに設定する
+//     //  と同時に、表示位置も「top:0 / left:0」ではなく調整する
+//     width:  150%;
+//     height: 150%;
+//     width:  120% !important;
+//     height: 120% !important;
+  
+//     /* これにより、親のエレメント高さ・幅に合わせ表示出来る */
+//     object-fit: cover;
+//   }
+// }
+
+
+//
+// ***********************************************
+// ★ 各種【parallax】アニメーション画像、外枠・画像設定用スタイル
+// ***********************************************
+@mixin style-parallax( $frameTopPos:  10vh, $frameLeftPos: 63%,
+                       $frameWidth:    30%, $frameHeight: 80vh,
+                       $imageWidth: "auto", $imageHeight: 150%  ) {
+    // **************************************************
+  // **************************************************
+  // **************************************************
+  .baseFrame {
+    // 
+    // セクションの左上を原点とし、
+    // 個別画像の配置位置を設定する。
+    position: absolute;
+
+    border: 1px solid #333;
+    border-radius: 15px;
+    box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+
+    // 
+    // セクション内に於ける画像表示位置を指定
+    top:    $frameTopPos;        // 2.5vh;
+    left:   $frameLeftPos !important;
+    width:  $frameWidth;       // 38%;
+    height: $frameHeight;       // 95vh;
+
+    @include mquery( "mb" ) {
+      width: 95% !important;
+      top: 105px !important;
+      left: 2.5% !important;
+      height: $mbSvceImgHeight;    // 120vh 105vh
+      // margin: 0 auto;
+      opacity: 0.3;
+    }
+
+    // 
+    // New Added! 2023/12/07
+    overflow: hidden;
+    z-index:99;
+
+    border: 2px dashed red;
+
+    img {
+      // width: 150% !important;
+      width: auto !important;
+      height: 150% !important;
+      // position: absolute;
+      // left: -25%;
+      // height: auto;
+      z-index: -1;  
+
+      /* これにより、親のエレメント高さ・幅に合わせ表示出来る */
+      object-fit: cover;
+    }
+  }
+  // **************************************************
+  // **************************************************
+  // **************************************************
+}
+
+@mixin style_expImage {
+
+  height: 63vh; //500px;
+
+  // 
+  // セクションの左上を原点とし、
+  // 個別画像の配置位置を設定する。
+  position: absolute;
+
+  // 
+  // 画像位置は、各セクション対応SCSSにて設定
+  // top:  0;       // for DEBUG !!!!!
+  // left: 0;       // for DEBUG !!!!!
+
+  // background-color: lime;
+
+  /* はみ出し部分は非表示・内部画像の窓枠設定 */
+  overflow: hidden;
+
+  border-radius: 15px;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+
+  img {
+    /* style_expImage定義の「absolute」が「relative」の役目と成る */
+    /* style_expImage定義の原点に対して、実画像の表示、絶対位置を指定 */
+    /* 無くても良いかも・・・ */
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    
+    // 
+    //「スクロールに依る移動にて隙間が空かない様」に、
+    //  親要素のサイズの「100%」ではなく、幾分多きめに設定する
+    //  と同時に、表示位置も「top:0 / left:0」ではなく調整する
+    width:  150%;
+    height: 150%;
+  
+    /* これにより、親のエレメント高さ・幅に合わせ表示出来る */
+    object-fit: cover;
+  }
+}
+
+//
+// ***********************************************
+// ★ トップページ内「事業説明」横スクロールパネルセクションない画像定義
+// ***********************************************
+@mixin style_ourPfmRellaxImageMB( $topPos: 260px, $leftPos: 60%, $baseWidth: 35%, $baseHeight: 450px, $imageTopRate: -80%, $imageLeft: -25% ) {
+
+  // 
+  // style-sectionにて「relative」設定
+  position: absolute;
+      
+  top:    $topPos  !important;
+  left:   $leftPos !important;  //80px;
+  width:  $baseWidth;
+  height: $baseHeight;
+  
+  // border: 1px solid rgba(3,3,3,0.5);
+  border-radius: 15px;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+  overflow:hidden;
+
+  // for DEBUG!
+  // border: 4px dashed red;
+  // overflow:visible;
+
+  .baseFrame {
+    position: relative;
+    top:  0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    // for DEBUG!
+    // border: 2px dashed lime;
+    // background-color: lime;
+    // overflow:visible;
+
+    img {
+      position: absolute;
+      width:  auto;
+      height: 200%;
+      top:    $imageTopRate;                // -80% -220px;
+      left:   $imageLeft;                   // -220px;
+    
+      /* これにより、親のエレメント高さ・幅に合わせ比率を壊さず表示出来る */
+      object-fit: cover;
+    }
+  }
+}
+@mixin style_ourPfmRellaxImage( $topPos: 200px, $leftPos: 25%, $baseWidth: 35%, $baseHeight: 300px, $imageTopRate: -250% ) {
+
+  // 
+  // style-sectionにて「relative」設定
+  position: absolute;
+
+  top:    $topPos  !important;
+  left:   $leftPos !important;
+  width:  $baseWidth;                        // ***************************
+  height: $baseHeight;
+  
+  border-radius: 15px;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+  overflow:hidden;
+
+  // for DEBUG!
+  // border: 4px dashed red;
+  // overflow:visible;
+
+  .baseFrame {
+    position: relative;
+    top:  0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    // for DEBUG!
+    // border: 2px dashed lime;
+    // background-color: lime;
+    // overflow:visible;
+
+    img {
+      position: absolute;
+      width:  150%;
+      height: 150%;
+      top:    $imageTopRate;       // -80% -220px;
+      left:   -25%;                // -220px;
+      
+      /* これにより、親のエレメント高さ・幅に合わせ表示出来る */
+      object-fit: cover;
+    }
+  }
+}
+
+
+// 
+// ***********************************************
+// ★ トップページ内セクション共通定義
+// ***********************************************
+@mixin style_sectionContainer {
+  width:  50% !important;
+  width:  55% !important;        // 2023/12/06
+  @include mquery( "mb" ) { margin-left: 5vw; width:  97vw; height: 100%; } // 90vw
+  @include mquery( "pc" ) { margin-left: 8%; height: 100vh; }
+  @include mquery( "pc" ) { margin-left: 5%; height: 100vh; }       // 2023/12/06
+  
+  // 
+  // for DEBUG !!!! 20221013
+  overflow: hidden;
+
+  // border: 2px dashed red;
+
+}
+
+// 
+// ***********************************************
+// ★ トップページ内「横スクロール対象部・お知らせブログ」セクション共通定義
+//  ■ PC画面用設定 
+// ***********************************************
+@mixin style_ourPfmSectionContainer(
+  $rectLP, $rectCP, $rectRP,
+  $containerLeft: 0,
+  $bzKdP1: 150px, $bzKdP2: 20px, $bzKdP3: 30px, $bzKdP4: 20px
+) {
+  @include style_sectionContainer();
+
+  // 20221011
+  position: absolute;
+
+  left: $containerLeft;                // ★
+
+  // 
+  // 事業タイトル「Ⅰ　Management Support：経営支援」
+  .bizKind {
+    @include style-bizKind( $bzKdP1, $bzKdP2, $bzKdP3, $bzKdP4 );    // ★
+  }
+
+  // 
+  // 三並び、経営支援事業イメージ画像
+  .addImagePkg {
+    display: flex;
+    justify-content: space-around;
+
+    position: absolute;
+    top:    72%;
+    left:  20px;
+    // margin-left: 3.1vw;       // 3vw 20px 80px;
+    margin-left: 0;       // 3vw 20px 80px;
+    width: 100%;
+    width: 95%;
+
+    // border: 2px dashed red;
+
+    .rectL {
+      @include style_rect;
+      background-image: url($rectLP);
+    }
+    .rectC {
+      @include style_rect;
+      background-image: url($rectCP);
+    }
+    .rectR {
+      @include style_rect;
+      background-image: url($rectRP);
+    }
+  }
+
+  // 
+  // メッセージ文本体「【実現したい】その熱い想いをサポート、他」
+  .msgDetailPerform {
+    .msgDetailMB { display: none; }
+    
+    @include style-msgDetail( $pcDefaultFSize );
+
+    @if $GB_ANIMATE_FLAG == 1 {
+      transform: translateX( 20% );
+      // @include DEBUG-border( lime, dashed, 2px );
+    }
+  }
+}
+
+
+// 
+// ***********************************************
+// ★ トップページ内「横スクロール対象部・お知らせブログ」セクション共通定義
+//  ■ モバイル画面用設定 
+// ***********************************************
+@mixin style_ourPfmSectionContainerMB(
+  $rectLP, $rectCP, $rectRP,
+  $bzKdP1: 80px, $bzKdP2: 20px, $bzKdP3: 150px, $bzKdP4: 20px
+) {
+  @include style_sectionContainer;
+
+  position: relative;
+  margin-left: 10vw;
+  width: 90%;
+
+  @include DEBUG-border( blue, dashed );
+
+  // 
+  // 事業タイトル「Ⅱ　IT WEB ソリューション」
+  .bizKind {
+    @include style-bizKindMB( $bzKdP1, $bzKdP2, $bzKdP3, $bzKdP4 );   // ★　１との違い
+  }
+
+  .addImagePkg {
+    display: flex;
+    justify-content: space-around;
+
+    position: absolute;
+    // top 位置は「javascript」にて算出
+    width: 94%;
+
+    margin-left: 3vw; //30px;
+
+    .rectL {
+      @include style_rect;
+      background-image: url( $rectLP );
+    }
+    .rectC {
+      @include style_rect;
+      background-image: url( $rectCP );
+    }
+    .rectR {
+      @include style_rect;
+      background-image: url( $rectRP );
+    }
+
+    // @include DEBUG-border( purple, dashed, 2px );
+  }
+
+  // メッセージ文本体「和Plusと言うフィルタ」
+  .msgDetailPerform {
+    .msgDetailPC { display: none; }
+
+    // @include style-msgDetail( 3vw );
+    @include style-msgDetail( $mbDefaultFSize );
+
+    // 20221011
+    position: absolute;
+
+    // top 位置は「javascript」にて算出
+    margin-left: calc( 1vw*2 ); //30px;
+    @if $GB_ANIMATE_FLAG == 1 {
+      transform: translateX( 20% );
+      // @include DEBUG-border( lime, dashed, 2px );
+    }
+  }
+}
+@mixin style_circleOMB( $flg, $cirTop,  $cirRight: 8%, $cirWidth: 26vw, $cirHeight: 26vw, $cirImg, $cirRad: 50% ) {
+  @include style_circleL;
+  display: flex;
+
+  // 20221011
+  position: absolute;
+
+  // top 位置は「javascript」にて算出
+  top: $cirTop !important;
+  right: $cirRight;
+
+                  left: 220px !important;
+  @if $flg == 3 { left: 150px !important; }
+
+  width:  $cirWidth  !important;
+  height: $cirHeight !important;
+  background-image: url($cirImg);
+  border-radius: $cirRad;
+}
+
+// 
+// ***********************************************
+// ★ トップページ内「セクションタイトル」定義
+//    １．一価値添えて
+//    ２．サービスのご案内
+//    ３．込める思い
+//    ４．お知らせ／ブログ
+// ***********************************************
+@mixin style_sectionTitle {
+  display: flex;
+  align-items: center;
+  
+  @include mquery( "mb" ) { margin-top:  50px; }      // 80px
+  // @include mquery( "pc" ) { margin-top: 120px; line-height: 2em; padding-bottom: 5px; } // 150px;
+  @include mquery( "pc" ) { margin-top: 140px; line-height: 2em; padding-bottom: 5px; } // 2022-12-19 150px;
+  margin-bottom: 29px;
+
+  // 
+  border-bottom: 2px solid rgba(180, 194, 220, 0.3);
+
+  // ハイフン
+  .secHrzLineL { @include style_secBar; };    // NTAD -100%
+  .secHrzLineR { @include style_secBar; margin-bottom: 10px; };
+}
+@mixin style_secSpan {
+  @include mquery( "mb" ) {
+    font-size: $mbDefaultSectionTitle;
+    letter-spacing: -0.2em;  
+  }
+  @include mquery( "pc" ) {
+    font-size: $pcDefaultSectionTitle;
+    letter-spacing: -0.1em;  
+  }
+  color: #fff;
+  font-weight: normal;      // bold;
+
+  // 
+  // 文字が沸いてくる、開始点からの距離指定
+  // spanタグは「インライン要素」なので、基本「縦横指定・移動指定」できない。
+  // 従って【display:inline-block】指定にて、ブロック要素指定し、
+  // 移動を可能にする必要が有る！
+  display: inline-block;
+  @if $GB_ANIMATE_FLAG == 1 {
+    transform: translate(100%, 0);   // NTAD -100%
+    opacity: 0;
+    // @include DEBUG-border( lime, dashed, 2px );
+  }
+}
+@mixin style_secBar {
+  height: 2px;          // 2px;
+
+  @include mquery( "mb" ) {
+    width : 20px;           // 15px;
+    margin: 0 15px;
+    margin-left: 20px;
+  }
+  @include mquery( "pc" ) {
+    width : 35px;
+    margin: 0 15px;
+    margin-left: 20px;
+  }
+  background-color : #665A1A;
+  @if $GB_ANIMATE_FLAG == 1 {
+    transform: translateX( 100% );
+    opacity: 0;
+  }
+}
+
+// 
+// ***********************************************
+// ★ トップページ内「横スクロール画面内、円形オブジェクト」共通定義
+// ***********************************************
+@mixin style_circleL {
+  @include mquery( "mb" ) {
+    width: 26vw; //100px;
+    height:26vw; //100px;  
+  }
+  @include mquery( "pc" ) {
+    width: 12vw; //200px;
+    height:12vw; //200px;  
+  }
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+}
+@mixin style_circleM {
+  @include mquery( "mb" ) {
+    width: 26vw; //100px;
+    height:26vw; //100px;  
+  }
+  @include mquery( "pc" ) {
+    width: 10vw; //200px;
+    height:10vw; //200px;  
+  }
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+}
+
+// 
+// ***********************************************
+// ★ トップページ内「横スクロール画面内、矩形オブジェクト」共通定義
+// ***********************************************
+@mixin style_rect {
+  width: 31%;
+  height: calc( 1vh*20 ); // calc( 1vw* 9 ); // 150px;  
+
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+}
+
+// 
+// Only USE at orgPrdSales.html
+@mixin style_rectS {
+  @include mquery( "mb" ) {
+    width : 12vh;
+    height: 12vh; // calc( 1vw* 9 ); // 150px;    
+  }
+  @include mquery( "pc" ) {
+    width : 12vw;
+    height: 12vw; // calc( 1vw* 9 ); // 150px;    
+  }
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+}
+@mixin style_rectM {
+  @include mquery( "mb" ) {
+    width : 15vh;
+    height: 15vh; // calc( 1vw* 9 ); // 150px;    
+  }
+  @include mquery( "pc" ) {
+    width : 15vw;
+    height: 15vw; // calc( 1vw* 9 ); // 150px;    
+  }
+
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+}
+@mixin style_rectL {
+  @include mquery( "mb" ) {
+    width:  20vh;
+    height: 20vh; // calc( 1vw* 9 ); // 150px;    
+  }
+  @include mquery( "pc" ) {
+    width:  20vw;
+    height: 20vw; // calc( 1vw* 9 ); // 150px;    
+  }
+
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+}
+
+// 
+// ***********************************************
+// ★ 各ページ内「大見出し-個別文字・回転☛出現」共通定義
+//    １．We will change charms much more!
+//    ２．Philosophy
+// ***********************************************
+@mixin mainSpanSet {
+  @include mquery( "pc" )  {
+    font-size: calc( 1vw*5 );
+    font-size: clamp( 5vw, 5vw, $pcDefaultSectionTitle );
+    letter-spacing: -0.1em;
+  };
+  @include mquery( "mb" )  {
+    font-size: calc( 1vw*10 );    // 42px 64px 108px
+    font-size: clamp( 10vw, 10vw, $mbDefaultSectionTitle );
+    letter-spacing: -0.1em;
+  };
+  color: #fff;
+  // 
+  // 文字が沸いてくる、開始点からの距離指定
+  // spanタグは「インライン要素」なので、基本「縦横指定・移動指定」できない。
+  // 従って【display:inline-block】指定にて、ブロック要素指定し、
+  // 移動を可能にする必要が有る！
+  display: inline-block;
+  @if $GB_ANIMATE_FLAG == 1 {
+    transform: translate(-100%, 0) rotateY(-100deg);
+    opacity: 0;
+  }
+}
+
+// 
+// 書式
+// 
+// ***********************************************
+// ★ トップページ内企業理念セクション内「キャッチコピー」定義
+//    １．ひと価値そえて
+// ***********************************************
+@mixin style-cthCopy {
+  display: flex;
+  align-items: center;
+
+  line-height: 2em;
+  margin-top: 30px;          // 180px;
+  margin-bottom: 20px;  
+  color: #665A1A;
+  @if $GB_ANIMATE_FLAG == 1  {
+    opacity: 0;
+  }
+
+  @include DEBUG-border( yellowgreen, dashed, 2px );
+
+  @include mquery( "mb" )  {
+    margin-left: 8vw;
+    font-size: $mbDefaultSectionTitle;
+
+    width: 90% !important;
+
+    // border: 2px dashed red;
+
+  }
+  @include mquery( "pc" )  {
+    margin-left: 10vw;
+    font-size: $pcDefaultSectionTitle;
+  }
+
+  // ハイフン
+  .hrzLine {
+    height: 1px;
+
+    @include mquery( "mb" ) {
+      width : 20px;
+      margin: 0 20px 0 0;  
+    }
+    @include mquery( "pc" ) {
+      width : 1.5vw;    // 30px
+      margin-right: 2vw;  
+    }
+
+    background-color : #333;
+    position: relative;
+    left: 10px;      
+  }
+}
+
+// 
+// ***********************************************
+// メインページ内、「込める思い・・・」セクション・Ⅰ～Ⅳタイトル、
+// 　　　　　　　　「お知らせ・ブログ」セクション・お知らせ/日々のつぶやき
+// ***********************************************
+// 
+@mixin style-bizKind( $mgnT: 150px, $mgnR: 20px, $mgnB: 30px, $mgnL: 20px ) {
+  font-size: $pcDefaultSectionSubTitle;
+  text-align: center;  
+
+  margin-top:    $mgnT;
+  margin-right:  $mgnR;
+  margin-bottom: $mgnB;
+  margin-left:   $mgnL;
+
+  font-family: 游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;;
+  color: #393327;
+  @if $GB_ANIMATE_FLAG == 1 {
+    opacity: 0;
+  }
+}
+@mixin style-bizKindMB($mgnT: 80px, $mgnR: 20px, $mgnB: 150px, $mgnL: 20px) {
+  font-size: $mbDefaultSectionSubTitle;
+  text-align: left;
+
+  margin-top:    $mgnT;
+  margin-right:  $mgnR;
+  margin-bottom: $mgnB;
+  margin-left:   $mgnL;
+
+  width: 90%;
+
+  font-family: 游明朝体, "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;;
+  color: #393327;
+  @if $GB_ANIMATE_FLAG == 1 {
+    opacity: 0;
+  }
+}
+
+// 
+// ***********************************************
+// ★ 各ページ内「ローリングタイトル・キャッチコピー・メッセージ詳細」共通定義
+// ***********************************************
+@mixin style-rollingTitle {
+  position: absolute;
+  z-index: 1;
+
+  // ***** 20220321
+  // width: 100%;
+
+  // @include DEBUG-border( red, dashed, 2px );
+
+  // @include mquery( "pc" ) { margin-top: 40px; }     2023/12/05
+
+  // 大見出し「We will change charms be more!」
+  .msgMainTitle {
+
+    // モバイル用定義
+    @include mquery( "mb" )  {
+      margin-top: 20vh;             // 25vh;
+      margin-left: 8vw; // 7vw;
+      
+      // PC 用文字列非表示
+      .pcLine { display: none; }
+      .mbLine { span { @include mainSpanSet; } };
+    };
+    // PC用定義
+    @include mquery( "pc" )  {
+      margin-top: 15vh; // 20vh;
+      margin-left: 6vw; // 10vw;
+
+      // @include DEBUG-border( red, dashed, 2px );
+
+      // mobile device 用文字列非表示
+      .mbLine { display: none; }
+      .pcLine { span { @include mainSpanSet; } };
+    }
+
+  }
+  // キャッチコピー「ひと価値添えて・・・」
+  .cthCopy {
+    @include style-cthCopy;
+    @include mquery( "mb" ) { font-size: $mbDefaultSectionTitle; }
+
+    @if $GB_ANIMATE_FLAG == 1 {
+      transform: translateX( -20% );
+      // @include DEBUG-border( lime, dashed, 2px );
+    }
+  }
+  // メッセージ文体「和Plusと言うフィルタ」
+  @include mquery( "pc" ) {
+    .msgDetailMB { display: none; }
+    .msgDetailPC {
+      // @include style-msgDetail( calc( $pcDefaultFSize*1.2 ) );
+      @include style-msgDetail( $pcDefaultSectionArtic );
+      margin-left: 10vw !important;       // 7vw 20px 80px;
+
+      @if $GB_ANIMATE_FLAG == 1 {
+        transform: translateX( -20% );
+      }
+    }
+  }
+  @include mquery( "mb" ) {
+    .msgDetailPC { display: none; }
+    .msgDetailMB {
+      // @include style-msgDetail( $mbDefaultFSize*1.1 );
+      @include style-msgDetail( $mbDefaultSectionArtic );
+      width: 95%;
+      // margin-left: 7vw !important;
+      margin-left: 10vw !important;               // 20221018 Change
+
+      @if $GB_ANIMATE_FLAG == 1 {
+        transform: translateX( -20% );
+        // @include DEBUG-border( lime, solid, 2px );
+      }
+    }
+  }
+}
+
+// 
+// ****style-cthCopy*******************************************
+// トップペーstyle-cthCopyジ企業理念セクション・企業理念ページ内「鶴ヶ城櫻・表示位置」書式
+// ***********************************************
+@mixin style-imageDispPos( $imageURL:"../../../Images/WaPlus-Logo.webp", $imgHeight:65%, $pcPosT:16vh, $pcPosR:6vw ) {
+
+  @include mquery( "mb" )  {
+    width:  90%;
+    margin-left: 5%;
+  }
+  @include mquery( "pc" )  {
+    width: 48%;
+  }
+
+  content: "";
+  height: $imgHeight;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+
+  @if $GB_ANIMATE_FLAG == 1 {
+    transform: translateX( 30% );
+    opacity: 0;
+    // @include DEBUG-border( lime, solid, 2px );
+  }
+
+
+  // 
+  // from _ourPhilosophy.scss
+  position: absolute;
+  @include mquery( "mb" )  {
+    top:   $pcPosT;    // 10%;
+    left: 0%;   // 42%;    
+    background-image: linear-gradient(90deg,  rgba(255, 255, 255,   1 ) 0%,
+                                              rgba(255, 255, 255, 0.8 ) 25%,
+                                              rgba(255, 255, 255, 0.6 ) 50%,
+                                              rgba(255, 255, 255, 0.4 ) 75%,
+                                              rgba(255, 255, 255, 0.0 ) 100% ),
+                      linear-gradient(180deg, rgba(255, 255, 255, 1   ) 0%,
+                                              rgba(255, 255, 255, 0.8 ) 25%,
+                                              rgba(255, 255, 255, 0.6 ) 50%,
+                                              rgba(255, 255, 255, 0.4 ) 75%,
+                                              rgba(255, 255, 255, 0.0 ) 100% ),
+                      url( $imageURL );
+  }
+  @include mquery( "pc" )  {
+    top:   $pcPosT;    // 10%;
+    right: $pcPosR;      //5%;
+    background-image: linear-gradient(90deg,  rgba(255, 255, 255,   1 ) 0%,
+                                              rgba(255, 255, 255, 0.5 ) 40%,
+                                              rgba(255, 255, 255,   0 ) 70%,
+                                              rgba(255, 255, 255,   0 ) 100% ),
+                      linear-gradient(180deg, rgba(255, 255, 255, 1 ) 0%,
+                                              rgba(255, 255, 255, 0 ) 20%,
+                                              rgba(255, 255, 255, 0 ) 80%,
+                                              rgba(255, 255, 255, 0 ) 100% ),
+                      url( $imageURL );
+  } 
+}
+
+// 
+// ***********************************************
+// ***********************************************
+// オリジナル商品販売・いーねっか／ACestusページ内、ギャラリー部分共通書式
+// ***********************************************
+// ***********************************************
+// 
+// ＰＣ用定義
+// ***********************************
+@mixin style_PC {
+  position: absolute;
+  top: 10vh; // 120vh 150vh 38%;
+  bottom: 0;
+  border-radius: 5px;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+  // z-index: 0;
+}
+// 
+// モバイル用定義
+// ***********************************
+@mixin style_MB {
+  position: absolute;
+  top: 200vh;       // 155vh 120vh;
+  bottom: 0;
+
+  border-radius: 5px;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.5); // 0.35
+}
+
+@mixin style-galleryElements( $specifiedGalleryKind: "#inekkaGallery" ) {
+
+  #{$specifiedGalleryKind} {
+
+    @include DEBUG-border( lime, dashed, 2px );
+
+    background-color: rgba( 254, 244, 246, 0.5 );   // #FEF4F6
+
+    // 
+    // **************** ギャラリーセクション・共通部分
+    .brdDtlMsg {
+                                padding: 10vh 0 20vh 0;
+      @include mquery( "mb" ) { padding: 50px 0  0px 0; }
+
+      @include DEBUG-border( blue, dashed, 2px );
+
+      // 
+      // 事業実績
+      .cthCopy {
+        @include style-cthCopy;
+        
+        @if $GB_ANIMATE_FLAG == 1 {
+          transform: translateX( -20% );
+          // @include DEBUG-border( lime, dashed, 2px );
+        }
+      }
+
+      #forExample1 {
+        
+        @include mquery( "mb" ) {
+          width: 90%;
+        }
+
+        // メッセージ本体の基本設定取込み
+        @include style-msgDetail( 1vw );
+        
+      }
+
+      .forExample {
+
+        @include DEBUG-border( black, dashed, 2px );
+
+        font-size: $pcDefaultFSize;
+        line-height: 2em;
+        letter-spacing: 1px;
+    
+        margin-left: 10vw;
+
+        .uline {
+          // margin: 5vh 0 8vh 0;
+          margin: 5vh 0 5vh 0;
+          border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+        }
+    
+        // 
+        // 「■ 表示カテゴリー」ラベル
+        // h2 {
+        h3 {
+          display: inline-block;
+          // font-size: 1.3vw;
+          font-weight: normal;      // bold;
+          line-height: 1.5em;
+          position: relative;
+          margin-bottom: 0.5em;
+          overflow: hidden;
+          text-decoration: none;      
+        }
+        h3:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #333;
+          content: "";        
+        }
+      }
+    } 
+
+    // 
+    // parallax効果の為の枠（親）原点指定
+    position: relative;
+
+  }
+
+  // 
+  // ＰＣ用定義
+  // ***********************************
+  @include mquery( "pc" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 100vh;
+
+    .uline {
+      width: 50vw;
+    }
+    
+    .forExample {
+      margin-bottom: 150px;
+    
+      ul {
+        margin: 15px 50px;
+        li {
+          // font-size: 1vw;       // 2.1vh; 1.5vw
+          font-size: $pcDefaultFSize;
+          line-height: 2em;
+        }  
+      }
+
+      // h2 {
+      h3 {
+        font-size: $pcDefaultSectionSubTitle !important;
+        margin-left: 10vw;
+      }
+
+      #forExample1 {
+        @if $GB_ANIMATE_FLAG == 1 {
+          transform: translateX( -40% );
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  // 
+  // モバイル用定義
+  // ***********************************
+  @include mquery( "mb" ) {
+    // // 
+    // // 当該ページセクション高を仮設定しておく
+    // // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    // height: 138vh;  
+
+    .uline {
+      width: 80vw;
+      margin: 5vh 0 5vh 0 !important;
+    }
+
+    .forExample ul {
+      margin: 15px 20px;
+      li {
+        font-size:  2.8vw;    // 3vw; 1.5vw
+        line-height: 2em;
+      }
+    }
+
+    .forExample {
+      // h2 {
+      h3 {
+        font-size: $mbDefaultSectionSubTitle !important;
+        margin-top: 0.2em;
+      }
+      #forExample1 {
+        font-size: $mbDefaultFSize !important;
+        margin-left: 1vw !important;       // 3vw; 20px; 80px;
+
+        @if $GB_ANIMATE_FLAG == 1 {
+          transform: translateX( 40% );
+          opacity: 0;
+          // @include DEBUG-border( lime, dashed, 2px );
+        }
+      }
+    } 
+  }
+  // 
+  // 共通部分終了
+  // **************** ギャラリーセクション・共通部分
+}
+
+
+// 
+// ***********************************************
+// ***********************************************
+// ★ カテゴリー一覧ページ（投稿一覧リスト）及び、投稿タイル書式設定
+// ***********************************************
+// ***********************************************
+// 
+// 投稿一覧・サイドバー横並び表示用（投稿タイル内でも利用）
+@mixin style-sBysBlk {
+  @include mquery( "mb" ) { display: block; }
+  @include mquery( "pc" ) { display: flex;  }
+}
+
+@mixin style-whiteShadowLetter {
+  text-shadow: #fff 2px 0, #fff -2px 0, #fff 0 -2px, #fff 0 2px, #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px, #fff 1px 2px, #fff -1px 2px, #fff 1px -2px, #fff -1px -2px, #fff 2px 1px, #fff -2px 1px, #fff 2px -1px, #fff -2px -1px, rgba(0, 0, 0, .5) 3px 3px 3px;
+}
+
+// 
+// ***********************************************
+// ■ 投稿一覧タイルリスト表示ページ・投稿記事ページのサイドバー書式設定
+// 1.【sidebar.php】の書式設定
+// ***********************************************
+@mixin style-sidebar() {
+
+  // 
+  // *********************************************
+  // *********************************************
+  // ■ 投稿概要一覧リスト・ページ内、右側サイドバー設定
+  // *********************************************
+  .wpls-sideBar {
+    // position: relative;   // sticky効果ある？
+
+    width: 20%;
+    width: 25%;
+    @include mquery( "mb" ) { width: 100%; }
+
+    // border-radius: 8px;
+    // border: 2px dashed blue;        // for DEBUG!
+
+    // 
+    // 投稿概要リストページ内、右サイドメニュー内ボタン配置設定【menuBtn】
+    .sideMenu {
+
+      // position: sticky;
+      // top: 100px; // 画面の上から 0px の位置にきたら追従させる
+
+      // border: 2px dashed lime;    // for DEBUG!
+
+      // 
+      // ■ サイドバー内、アーカイブ選択メニュータイトル表示設定
+      h4 {
+        // font-size: calc( $pcDefaultFSize + 3px );                   // 16px
+        font-size: $pcDefaultSectionArtic;                          // 19px;
+        @include mquery( "mb" ) { font-size: $mbOurServiceTitle; width: 90%; }   // 16px;
+        @include style-whiteShadowLetter;
+        padding: 0.3rem 0;
+        text-align: center;
+        border-top:    3px dotted #000;
+        border-bottom: 3px dotted #000;
+        margin:         0 auto;
+        margin-bottom: 50px;
+      }
+      h4:not(:first-child) { margin-top: 80px; }
+
+                                font-size: 1vw;          // $articleCharSize;
+      @include mquery( "mb" ) { font-size: 14px; }       // $articleCharSizeMB;
+      font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+      line-height: 1.5em;
+      padding: 40px 10px 40px 10px !important;
+
+      @include mquery( "pc" ) {
+        padding: 40px 0;
+        width: 100%;
+        // min-height: 850px;
+      }
+
+      // 
+      // 投稿時期別一覧外枠設定
+      .eraList {
+        height: auto;
+        max-height: 300px;
+        overflow: auto;
+        margin:       30px auto;
+        padding:      10px 0;
+        padding-left: 10px;
+
+        @include mquery( "mb" ) { width: 80%; }
+
+        color: darkblue;
+        // text-shadow: #fff 2px 0, #fff -2px 0, #fff 0 -2px, #fff 0 2px, #fff 2px 2px, #fff -2px 2px, #fff 2px -2px, #fff -2px -2px, #fff 1px 2px, #fff -1px 2px, #fff 1px -2px, #fff -1px -2px, #fff 2px 1px, #fff -2px 1px, #fff 2px -1px, #fff -2px -1px, rgba(0, 0, 0, .5) 3px 3px 3px;
+        // text-shadow: #fff 2px 2px;
+        @include style-whiteShadowLetter;
+
+        background-color: rgba(0, 255, 255, 0.1);
+
+        border: 1px solid rgba( 3,3,3,0.5 );
+        border-radius: 10px;
+      }
+
+      // 
+      // カテゴリ種別選択ボタン設定
+      .catBtnList {
+        margin:      0 auto;
+        margin-top: 30px;
+        padding:     0 10px;
+
+        @include mquery( "mb" ) { width: 80%; }
+
+        background-color: rgba(0, 255, 255, 0.1);
+
+        // border: 2px dashed rgba( 3, 3, 3, 0 );
+        border: 1px solid rgba( 3,3,3,0.5 );
+        border-radius: 10px;
+      }
+      @include style-catMenuBtn();
+    }
+
+    // 
+    // サイドバー、アニメーション設定
+    @if $GB_ANIMATE_FLAG == 1 {
+      transform: translateY( 30% );
+      opacity: 0;
+      // @include DEBUG-border( lime, solid, 2px );
+    }
+  }
+
+  // 
+  // *************************************************
+  // *************************************************
+  // ■ アーカイブリスト表示用設定
+  // 【参考】「https://ateitexe.com/wordpress-accordion-archives/」
+  // 　１．「＋<span>」 年号（投稿件数）
+  // 　　(1) 月別（投稿件数）
+  // 　※　「＋<span>」クリックにて、月別データの表示／非表示を切り替える
+  // *************************************************
+  // *************************************************
+  ul.accordion {
+    // border: 2px dashed lime;
+    margin-left: 10px;
+  }
+  ul.accordion ul{ /* アコーディオン部 */
+    margin: 5px 0 30px 8px;        // left ☛ 15px;
+    // border: 1px dashed purple;
+  }
+  ul.accordion ul.hide{ /* アコーディオン非表示 */
+    display: none;
+  }
+  ul.accordion li{ /* リセット */
+    list-style: none;
+    background: none;
+    padding: 0;
+  }
+  ul.accordion li p{ /* リセット */
+    margin: 0;
+  }
+  ul.accordion li p span{ /* アイコン背景 */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    background: #09c;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: -2px;
+  }
+  ul.accordion li p span:hover { /* アイコン背景 */
+    cursor: pointer;
+  }
+  ul.accordion li p span:before{ /* アイコン横棒 */
+    content:'';
+    height: 1px;
+    width: 9px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    top: 7px;
+    left: 3px;
+  }
+  ul.accordion li p span:after{ /* アイコン縦棒（閉じてるとき） */
+    content: '';
+    height: 9px;
+    width: 1px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    top: 3px;
+    left: 7px;
+  }
+  ul.accordion li p span.acv_open:after{ /* アイコン縦棒なし（開いてるとき） */
+    height: 0;
+    width: 0;
+  }
+  ul.accordion ul li{ /* アーカイブリスト */
+    margin-left: 15px;
+    position: relative;
+  }
+  ul.accordion ul li::after{ /* アーカイブリストマーク 「＞」*/
+    display: block;
+    content: '';
+    position: absolute;
+    top: .2em;
+    top: .5em;
+    left: -1em;
+    // width: 6px;
+    // height: 6px;
+    width:  calc( ($pcDefaultFSize + 1px) / 2 );
+    height: calc( ($pcDefaultFSize + 1px) / 2 );
+    @include mquery( "mb" ) {
+      width:  calc( $mbOurServiceTitle / 2 );
+      height: calc( $mbOurServiceTitle / 2 );  
+    }
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .acv_open { color: red; }
+
+  // *********************************************
+  // *********************************************
+  // ■ 右側サイドバー設定・ここ迄
+  // *********************************************
+  // *********************************************
+}
+
+// 
+// ***********************************************
+// ■ 投稿一覧タイルリスト表示ページの書式設定
+// 1.【indicateCategoryPage.php】の書式設定
+// ***********************************************
+@mixin style-categoryPage( $specifiedCLASS,
+                           $imgPC: "../../../../Images/newsBlog/newsImage.jpg",
+                           $imgMB: "../../../../Images/newsBlog/newsImageMB.jpg" ) {
+
+  // 
+  // 横揺れ禁止
+  .main { width: 100%; }
+
+  // 
+  // ＰＣ・モバイル共通定義
+  // ***********************************
+  #rollingTitlePage {
+
+    // border: 2px solid blueviolet;       // for DEBUG!!!!!
+
+    // 
+    // ***** 20220321
+    // 【Knowledge】＊＊＊＊＊
+    // ※ アニメーションでの注意点！
+    //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    //   その親要素について、はみ出た部分に非表示を設定しないと、
+    //   画面を横にスワップすると、画面がグニャグニャと動く。
+    //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+
+    .container {
+      width: 100%;
+      max-width: $areaMaxWidth !important;    //1170px;
+      margin: 0 auto;
+    }    
+
+    // 
+    // 当該ページセクション高を仮設定しておく
+    // 当該ページの実高さは、デバイス画面高に応じて計算し設定している為、
+    // 初期ロードの際高さが無いと、フッター部分が最初に表示されてしまう。
+    height: 100vh;
+
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //  「GSAP等」子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    overflow: hidden;
+   
+    // 単一投稿タイル書式設定
+    @include style-postInfoByTILE( 15px );
+
+    // 
+    // 背景画像の表示
+    #{$specifiedCLASS} {
+                                @include style-imageDispPos( $imgPC, 65vh, 30vh, 15vw );    // 65%
+      @include mquery( "mb" ) { @include style-imageDispPos( $imgMB, 65vh, 35vh ); margin-left: 10% !important; }
+      background-position: bottom;
+      // border: 2px dashed purple;        // for DEBUG!!!!!
+    }
+
+    .rollingTitle {
+      @include style-rollingTitle;        // position: absolute;
+      overflow: hidden;
+      width: 100%;
+      max-width: $areaMaxWidth !important;    //1170px;
+
+      // 
+      // アニメーションタイトルの文字間を調整
+      .msgMainTitle {
+        .mbLine { span { letter-spacing: -0.05em; } };
+        .pcLine { span { letter-spacing: -0.05em; } };
+
+        width: 50%;
+        max-width: $areaMaxWidth !important;    //1170px;
+  
+        // border: 2px solid black;       // for DEBUG!!!!!
+      }
+
+      .cthCopy {
+        width: 50%;
+        max-width: $areaMaxWidth !important;    //1170px;
+
+        // border: 2px solid black;       // for DEBUG!!!!!
+      }
+    
+                                width: 100%; // 80%;
+      @include mquery( "mb" ) { width: 100%; }
+
+      // border: 2px dashed blueviolet;      // for DEBUG!!!!!
+
+      // 
+      // ■ 2022/11/25
+      // 【_mixinDefine.scss:LINE-1024】へ移動。
+      //  ここにあると、ページネーションボタンにも下線が付いて、
+      //  ボタン上下位置が揃わなくなる！
+      // @include style-navUnderLine( "#msgDetail", "a" );
+      // 
+      .sBysBlk {
+        @include style-sBysBlk();
+
+        // border: 2px dashed red;                // for DEBUG!!!!!
+      }
+
+      // 
+      // rect形式画像3枚セットの位置決め用定義
+      #msgDetail {
+        position: relative;
+        top:  0;
+        left: 0;
+                                  width: 78%; // 70%; // 78%;
+        @include mquery( "mb" ) { width: 100%; }
+
+        // 
+        // ■ 個別投稿タイル位置に対応
+        //  （通常定義は、セクションメッセージ表示位置に成っている）
+        //  （10vw specified in「style-rollingTitle」）
+        .msgDetailPC {
+          margin:    0 1vw !important;
+          margin-left: 5vw !important;
+
+          // border: 2px solid blue;       // for DEBUG!
+        }
+        .msgDetailMB {
+          width: 100%;
+          margin: 0 1vw !important;
+        }
+
+        // border: 2px dashed lime;          // for DEBUG!
+
+        .uline {
+          margin: 5vh 0 8vh 0;
+          border-bottom: 1px solid rgba( 3,3,3,0.3 );
+          border-bottom: 1px solid rgba(180, 194, 220, 1);
+        }
+      }
+
+      // // 
+      // // *********************************************
+      // // *********************************************
+      // // ■ 投稿概要一覧リスト・ページ内、右側サイドバー設定
+      // // *********************************************
+      @include style-sidebar;
+
+
+    }       // rollingTitle
+  }         // rollingTitlePage
+}
+
+// ***********************************************
+// ■ 投稿概要一覧リスト表示中、投稿タイル１件の書式設定
+// 1.【indicateOnePostTILE.php】の書式設定
+// ***********************************************
+@mixin style-postInfoByTILE( $thumbLeftPos: 10px ) {
+  
+  // 
+  // 横並びブロック【sBysBlk】内部にて、
+  // 実際に横並びに成る記事ブロック、一つの設定
+  .onePostTile {
+    font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+    line-height: 1.5em;
+    // background: linear-gradient(to right, rgba(255,255,0,0.5), rgba(0,255,255,0));
+    // background: linear-gradient(to right, rgba(255,0,0,0.3), rgba(0,255,255,0));
+    background: linear-gradient(to right, rgba(0,255,255,0.3), rgba(0,255,255,0));
+
+    border-radius: 8px;      
+                              font-size: $pcDefaultFSize;          // 16px;
+    @include mquery( "mb" ) { font-size: $mbDefaultFSize; }        // 14px
+
+    margin:  15px auto;
+    padding: 15px;
+    @include mquery( "pc" ) {
+      width: 100%;   // 80%;
+    }
+    // border: 1px dashed red;
+    @include mquery( "mb" ) {
+      margin: 10px auto;
+      padding: 20px 10px;
+      // width: 90%;
+      width: 85%;                // 2022-12-19
+
+      // border: 2px dashed lime;
+    }
+    border-right:  none;
+    box-shadow: -5px 5px 5px rgba(117,106,48,0.7);
+
+    // 
+    // 投稿記事一覧用タイル内リンク、下線アニメーション設定
+    @include style-navUnderLine( ".sBysBlk", "a" );
+
+    // 
+    // 横並びブロック設定
+    .sBysBlk {
+      @include style-sBysBlk;
+      @include mquery( "pc" ) { align-items: center; }
+
+      /* 新着情報・サムネイル画像表示設定 */
+      .newsThumb {
+        // padding: 3px;
+                                  width: 100px; height: 100px; margin-left: $thumbLeftPos;
+        @include mquery( "mb" ) { width:  90px; height:  60px; margin-left: 10px; padding: 0; }
+
+        text-align: center;
+        border: 2px solid blue;
+        border-radius: 10px;
+        overflow: hidden;
+        object-fit: cover;
+      }
+      .newsNoImage {
+                                  width: 100px; height: 100px;
+        @include mquery( "mb" ) { width:  60px; height:  60px; padding: 0; }
+        background-image: linear-gradient(90deg,  rgba(255, 255, 255, 0.5 ) 0%,
+                                                  rgba(255, 255, 255, 0.4 ) 45%,
+                                                  rgba(255, 255, 255, 0.3 ) 70%,
+                                                  rgba(255, 255, 255, 0.2 ) 95%,
+                                                  rgba(255, 255, 255, 0.1 ) 100% ),
+                          linear-gradient(180deg, rgba(255, 255, 255, 0.5 ) 0%,
+                                                  rgba(255, 255, 255, 0.4 ) 25%,
+                                                  rgba(255, 255, 255, 0.3 ) 50%,
+                                                  rgba(255, 255, 255, 0.2 ) 75%,
+                                                  rgba(255, 255, 255, 0.1 ) 100% ),
+                                              url( "./../../../../Images/WaPlus-Logo.png" );
+        background-size:     cover;
+        background-position: center;
+        background-repeat:   no-repeat;
+      }
+
+      // 
+      // サムネイル画像、親要素内表示調整
+      .myThumbParentStyle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        object-fit:cover;
+      }
+      .myThumbChildStylePC {
+        width:  100px;
+        height: 100px;
+      }
+      .myThumbChildStyleMB {
+        width:  90px;
+        height: 90px;
+      }
+  
+      /* 新着情報・記載日付表示設定 */
+      .newsDate {
+        @include mquery( "pc" ) {
+          // padding: 10px 1.5vw 0 1.5vw;     // padding-top はhover時の下線高さを考慮
+          padding: 10px 0 0 1vw;     // padding-top はhover時の下線高さを考慮
+          font-size: $pcDefaultSmallFSize !important;        // 14px
+
+          // border: 2px dashed red;         //for DEBUG!!!
+        }
+
+        @include mquery( "mb" ) {
+          width: 80%;
+          margin:  0;
+          font-size: $mbDefaultFSize;           // 14px
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          // border: 2px solid red;
+        }
+
+        color: #333;
+        font-weight: bold;
+        // border: 1px dashed red;
+        /* border-radius: 10px; */
+      }
+
+      .newsSet {
+        width: 100%;
+        display: block;
+        border: 1px solid #333;
+        border-radius: 8px 0 0 8px;
+        border-right: none;
+        @include mquery( "pc" ) {
+          width: 60%;
+          padding: 5px 0 5px 5px;
+        }
+        @include mquery( "mb" ) { margin-top: 10px; }
+
+        .newsTitle {
+          margin: 10px 10px 10px 0;
+          font-size: $pcOurServiceTitle;       // 18px;
+          @include mquery( "mb" ) { 
+            font-size: $mbOurServiceTitle;        // 14px
+            width: 100%;
+            margin-left:   10px;
+            margin-bottom:    0;
+          }
+          font-weight: bold;
+          // border: 1px solid purple;
+        }
+        .newsContext {
+          padding: 0 10px 0 10px;
+          @include mquery( "mb" ) { display: none; padding: 10px 20px 0 0; }
+        }
+      
+      }
+
+      .thumbDateForMB {
+        display: flex;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+
+// 
+// ***********************************************
+// カテゴリー一覧ページサイドバー内、「カテゴリ選択ボタン」書式
+// ***********************************************
+@mixin style-catMenuBtn(  $specifiedBtnWidth: 100% ) {
+  // mixinDefine:style-menuBtn の内容の差替え
+  .menuBtn {
+    height: 50px;
+  
+    // ***************************
+    // style-menuBtn からコピー
+    width: $specifiedBtnWidth;                             // 100%;
+    padding: 5px 5px;
+    border: 2px solid rgba(102,90,26, 0.8);
+    // border: 2px dashed red;
+    border-radius: 8px;
+    overflow: hidden;
+  
+    color: white;
+    background-color: rgba(70,118,215,0.7);
+
+    margin: 15px auto;
+
+    transition: 500ms;
+    // ***************************
+  }
+  .menuBtn:not(:first-child) {
+    margin: 15px auto;
+    // margin-left: 5px;
+  }
+
+  .menuBtn:hover {
+
+    color:rgba(102,90,26,1);
+
+    @include mquery( "mb" ) {
+      color: yellow;
+      transform: scale(1.02);
+    }
+    @include mquery( "pc" ) {
+      color: #333;
+      background-color: $btnHoverBgColor;
+    }
+  }
+
+  .btnInner {      
+    // ***************************
+    // style-menuBtn からコピー
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: 1px solid rgba(102,90,26, 1);
+    border-radius: 8px;
+    overflow: hidden;
+    // ***************************
+
+    .mnBtnIcon {
+      width: 35% !important;
+
+      // ***************************
+      // style-menuBtn からコピー
+      height: 95%;
+      padding: 5px 5px;
+      border-radius: 8px;
+      object-fit: cover; 
+      overflow: hidden;
+      // ***************************
+    }
+    p {
+      width: 65%;
+                                font-size: calc( 1vw - 4px ) ;  // 1vw; 16px-4px
+      @include mquery( "mb" ) { font-size: calc( $mbDefaultFSize ); }     // 14px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+    }
+    img {
+      background-color: rgba(70,118,215,0.2);
+    }
+  }  
+}
+
+
+// 
+// ***********************************************
+// ***********************************************
+// ★ 投稿個別ページ（single.php）書式設定
+// ***********************************************
+// ***********************************************
+
+// 
+// ***********************************************
+// 各セクション内インフォ―メーションタイトル用定義
+// ***********************************************
+@mixin style-postDate( $fontColor: #333 ) {
+  font-size: 20px;              // 20px
+  @include mquery( "mb" ) { font-size: 16px; }
+  font-weight: bold;
+  font-family:"HGPSoeiKakupoptai";
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+  text-align: center;
+  line-height: 40px;            // 40px
+  @include mquery( "mb" ) { line-height: 25px; padding: 5px 0;}
+  color: $fontColor;
+  background-color: rgba(255,222,173,1);
+  border: 1px solid #333;           // NTad 2px
+  border-radius: 8px;
+
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+

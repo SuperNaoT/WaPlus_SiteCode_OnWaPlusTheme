@@ -1,0 +1,53 @@
+@charset "utf-8";
+//
+// ★ 企業理念セクション
+// ******************************************
+
+@include style-navUnderLine( ".msgDetailPC", "a" );
+@include style-navUnderLine( ".msgDetailMB", "a" );
+
+#rollingTitlePage {
+
+  // border: 2px dashed blue;
+  
+    // // 
+    // // ***** 20220321
+    // // 【Knowledge】＊＊＊＊＊
+    // // ※ アニメーションでの注意点！
+    // //   子要素が画面外から画面内に左右から移動してくる場合、
+    // //   その親要素について、はみ出た部分に非表示を設定しないと、
+    // //   画面を横にスワップすると、画面がグニャグニャと動く。
+    // //   特に、モバイル用レスポンシヴ画面にて、ＰＣ画面用要素と共有していると、
+    // //   当現象が、モバイル用レスポンシヴ画面にて発生する！
+    // overflow: hidden;
+
+  @include style-section;
+
+  align-items: normal;
+
+  @include mquery( "pc" ) { 
+    height: calc( 100vh - 110px ) !important;
+    max-width: $areaMaxWidth      !important;
+    margin: 0 auto;
+  } 
+  @include mquery( "mb" ) { position: relative; height: $mbPhiSecHeight; }
+
+  // 
+  // メッセージ部書式
+  .rollingTitle {
+    @include style-rollingTitle;
+    @include mquery( "pc" ) {
+      .msgMainTitle {
+        margin-top: 10vh !important;
+        line-height: 1.1;
+      }  
+    }
+  }
+
+  // 
+  // メッセージ部イメージ画像表示書式
+  .ourImage {
+    // @include style-imageDispPos( "../../../../Images/00_index/bgImage_SakuraS.jpg", 65%, 25vh );
+    @include style-imageDispPos( "../../../../Images/00_index/bgImage_SakuraS.jpg", 65%, 15vh );
+  }
+}
